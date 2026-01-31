@@ -3,7 +3,7 @@
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
 
-interface ApiResponse<T = any> {
+interface ApiResponse<T = unknown> {
   data?: T;
   error?: string;
   message?: string;
@@ -90,9 +90,9 @@ class AdminApiService {
 
       const data = await response.json();
       return { data };
-    } catch (error: any) {
+    } catch (error: unknown) {
       return {
-        error: error.message || 'Network error',
+        error: error instanceof Error ? error.message : 'Network error',
       };
     }
   }
@@ -447,14 +447,14 @@ class AdminApiService {
     return this.request('/admin/security/fraud-rules');
   }
 
-  async createFraudRule(data: any) {
+  async createFraudRule(data: Record<string, unknown>) {
     return this.request('/admin/security/fraud-rules', {
       method: 'POST',
       body: JSON.stringify(data),
     });
   }
 
-  async updateFraudRule(ruleId: string, data: any) {
+  async updateFraudRule(ruleId: string, data: Record<string, unknown>) {
     return this.request(`/admin/security/fraud-rules/${ruleId}`, {
       method: 'PATCH',
       body: JSON.stringify(data),

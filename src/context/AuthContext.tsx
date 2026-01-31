@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { adminApi } from "@/lib/api/admin";
 
@@ -66,6 +66,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
+  const handleLogout = useCallback(async () => {
+    try {
+      await adminApi.logout();
+    } catch {
+      // Ignore errors during logout
+    }
+    setUser(null);
+    adminApi.clearTokens();
+    router.push("/admin/login");
+  }, [router]);
+
   useEffect(() => {
     // Check for existing session
     const storedUser = localStorage.getItem("admin_user");
@@ -90,18 +101,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     }
     setIsLoading(false);
-  }, []);
-
-  const handleLogout = async () => {
-    try {
-      await adminApi.logout();
-    } catch {
-      // Ignore errors during logout
-    }
-    setUser(null);
-    adminApi.clearTokens();
-    router.push("/admin/login");
-  };
+  }, [handleLogout]);
 
   const login = async (email: string, password: string): Promise<boolean> => {
     setError(null);
@@ -121,8 +121,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       setError("Login failed. Please try again.");
       return false;
-    } catch (err: any) {
-      setError(err.message || "An error occurred during login");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "An error occurred during login");
       return false;
     }
   };

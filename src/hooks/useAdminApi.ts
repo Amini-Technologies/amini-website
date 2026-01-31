@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { adminApi, ApiResponse } from "@/lib/api/admin";
 
 interface UseApiState<T> {
@@ -10,35 +10,90 @@ interface UseApiState<T> {
   refetch: () => Promise<void>;
 }
 
+// Dashboard data types
+interface DashboardStats {
+  users: {
+    total: number;
+    active: number;
+    growth: number;
+  };
+  wallets: {
+    total: number;
+    active: number;
+    suspended: number;
+    totalBalance?: number;
+  };
+  transactions: {
+    total: number;
+    pending: number;
+    todayVolume: number;
+    growth: number;
+  };
+  security?: {
+    securityScore: number;
+    highPriorityAlerts: number;
+    unresolvedAlerts?: number;
+  };
+  recentTransactions: Array<{
+    id: string;
+    reference: string;
+    type: string;
+    amount: number;
+    currency: string;
+    status: string;
+    sender?: string;
+    receiver?: string;
+    senderName?: string;
+    receiverName?: string;
+    createdAt: string;
+  }>;
+}
+
+interface ChartData {
+  transactionVolume: Array<{
+    date: string;
+    volume: number;
+  }>;
+  userGrowth: Array<{
+    date: string;
+    users: number;
+  }>;
+}
+
 /**
  * Generic hook for fetching data from the admin API
  */
 export function useAdminApi<T>(
   fetcher: () => Promise<ApiResponse<T>>,
-  deps: any[] = []
+  deps: readonly unknown[] = []
 ): UseApiState<T> {
   const [data, setData] = useState<T | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // Store fetcher in a ref to avoid dependency issues
+  const fetcherRef = useRef(fetcher);
+  fetcherRef.current = fetcher;
 
   const fetchData = useCallback(async () => {
     setIsLoading(true);
     setError(null);
 
     try {
-      const result = await fetcher();
+      const result = await fetcherRef.current();
       if (result.error) {
         setError(result.error);
         setData(null);
       } else {
-        setData(result.data || null);
+        setData(result.data as T | null);
       }
-    } catch (err: any) {
-      setError(err.message || "An error occurred");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "An error occurred");
       setData(null);
     } finally {
       setIsLoading(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
   useEffect(() => {
@@ -52,15 +107,15 @@ export function useAdminApi<T>(
  * Hook for dashboard stats
  */
 export function useDashboardStats() {
-  return useAdminApi(() => adminApi.getDashboardStats());
+  return useAdminApi<DashboardStats>(() => adminApi.getDashboardStats() as Promise<ApiResponse<DashboardStats>>);
 }
 
 /**
  * Hook for chart data
  */
 export function useChartData(days: number = 7) {
-  return useAdminApi(
-    () => adminApi.getChartData(days),
+  return useAdminApi<ChartData>(
+    () => adminApi.getChartData(days) as Promise<ApiResponse<ChartData>>,
     [days]
   );
 }
@@ -216,8 +271,8 @@ export function useAdminMutation<TData, TVariables>(
         }
         setData(result.data || null);
         return { success: true, data: result.data };
-      } catch (err: any) {
-        const errorMessage = err.message || "An error occurred";
+      } catch (err: unknown) {
+        const errorMessage = err instanceof Error ? err.message : "An error occurred";
         setError(errorMessage);
         return { success: false, error: errorMessage };
       } finally {

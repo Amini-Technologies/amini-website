@@ -19,6 +19,7 @@ export default function AdminLogin() {
     if (authError) {
       clearError();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [email, password]);
 
   const handleSubmit = async (e: React.FormEvent) => {

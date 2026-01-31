@@ -1,0 +1,11 @@
+{
+  "enabledMcpjsonServers": [
+    "supabase",
+    "figma-4nn77l-49"
+  ],
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)"
+    ]
+  }
+}
