@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Wallet, ArrowLeft } from "lucide-react";
+import { Wallet, ArrowLeft, Trash2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - Amini",
@@ -177,6 +177,12 @@ export default function PrivacyPolicyPage() {
                     {section.title}
                   </a>
                 ))}
+                <a
+                  href="#account-deletion"
+                  className="block text-sm text-red-400 hover:text-red-300 transition-colors py-1 border-l-2 border-transparent hover:border-red-500 pl-3"
+                >
+                  Delete My Account
+                </a>
               </nav>
             </div>
           </aside>
@@ -213,8 +219,30 @@ export default function PrivacyPolicyPage() {
               ))}
             </div>
 
+            {/* Account Deletion */}
+            <div id="account-deletion" className="mt-12 p-8 rounded-2xl bg-red-500/5 border border-red-500/20 scroll-mt-24">
+              <div className="flex items-start gap-4">
+                <div className="h-10 w-10 rounded-xl bg-red-500/10 flex items-center justify-center shrink-0">
+                  <Trash2 className="h-5 w-5 text-red-400" />
+                </div>
+                <div className="flex-1">
+                  <h2 className="text-lg font-semibold text-white mb-2">Request Account & Data Deletion</h2>
+                  <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                    You have the right to request the deletion of your Amini account and all associated personal data. Once submitted, we will process your request within <strong className="text-white">30 days</strong> and send a confirmation to your registered contact. Note that some data may be retained where required by law or for fraud prevention purposes.
+                  </p>
+                  <a
+                    href="mailto:privacy@amini.ng?subject=Account%20Deletion%20Request&body=Hello%20Amini%20Team%2C%0A%0AI%20would%20like%20to%20request%20the%20deletion%20of%20my%20account%20and%20all%20associated%20personal%20data.%0A%0ARegistered%20phone%20number%3A%20%5BYour%20phone%20number%5D%0A%0AThank%20you."
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-400 hover:text-red-300 text-sm font-medium transition-all"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                    Request Account Deletion
+                  </a>
+                </div>
+              </div>
+            </div>
+
             {/* Footer note */}
-            <div className="mt-16 p-6 rounded-2xl bg-white/5 border border-white/10">
+            <div className="mt-8 p-6 rounded-2xl bg-white/5 border border-white/10">
               <p className="text-sm text-gray-400">
                 This Privacy Policy is governed by the laws of the Federal Republic of Nigeria. If you have a dispute relating to this policy, please contact us first and we will do our best to resolve it.
               </p>

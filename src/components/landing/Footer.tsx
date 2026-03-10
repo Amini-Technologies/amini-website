@@ -26,7 +26,7 @@ const navigation = {
     { name: "Privacy Policy", href: "/privacy-policy" },
     { name: "Terms of Service", href: "#" },
     { name: "Cookie Policy", href: "#" },
-    { name: "Licenses", href: "#" },
+    { name: "Delete My Data", href: "/delete-account" },
   ],
 };
 
