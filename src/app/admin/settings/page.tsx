@@ -143,8 +143,8 @@ export default function SettingsPage() {
       {/* Platform Settings */}
       <div className="card">
         <div className="flex items-center gap-3 mb-6">
-          <div className="rounded-lg bg-purple-100 p-2">
-            <Globe className="h-5 w-5 text-purple-600" />
+          <div className="rounded-lg bg-accent-100 p-2">
+            <Globe className="h-5 w-5 text-primary-600" />
           </div>
           <div>
             <h3 className="text-lg font-semibold text-gray-900">

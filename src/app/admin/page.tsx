@@ -57,8 +57,8 @@ const typeColors: Record<string, string> = {
   TRANSFER: "bg-blue-100 text-blue-700",
   deposit: "bg-green-100 text-green-700",
   DEPOSIT: "bg-green-100 text-green-700",
-  withdrawal: "bg-purple-100 text-purple-700",
-  WITHDRAWAL: "bg-purple-100 text-purple-700",
+  withdrawal: "bg-accent-100 text-primary-700",
+  WITHDRAWAL: "bg-accent-100 text-primary-700",
   bill_payment: "bg-amber-100 text-amber-700",
   BILL_PAYMENT: "bg-amber-100 text-amber-700",
 };
@@ -121,7 +121,7 @@ export default function AdminDashboard() {
       change: `${dashboardData?.transactions?.pending || 0} pending`,
       trend: "up",
       icon: ArrowLeftRight,
-      color: "bg-purple-500",
+      color: "bg-accent-500",
     },
     {
       name: "Today's Volume",
@@ -450,8 +450,8 @@ export default function AdminDashboard() {
           className="card hover:shadow-xl transition-all hover:-translate-y-1 group cursor-pointer"
         >
           <div className="flex items-center gap-4">
-            <div className="rounded-lg bg-purple-100 p-3 group-hover:bg-purple-200 transition-colors">
-              <ArrowLeftRight className="h-6 w-6 text-purple-600" />
+            <div className="rounded-lg bg-accent-100 p-3 group-hover:bg-accent-200 transition-colors">
+              <ArrowLeftRight className="h-6 w-6 text-primary-600" />
             </div>
             <div>
               <p className="font-medium text-gray-900">Transactions</p>

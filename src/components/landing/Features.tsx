@@ -17,56 +17,56 @@ const features = [
     description:
       "Send money to other Amini users instantly and completely free. No waiting, no fees.",
     icon: Send,
-    color: "from-violet-500 to-purple-600",
+    color: "from-primary-500 to-primary-700",
   },
   {
     name: "Digital Wallet",
     description:
       "A secure digital wallet to store, send, and receive money anytime, anywhere.",
     icon: Wallet,
-    color: "from-blue-500 to-cyan-500",
+    color: "from-primary-400 to-primary-600",
   },
   {
     name: "Bill Payments",
     description:
       "Pay for airtime, data, electricity, cable TV, and more right from your phone.",
     icon: CreditCard,
-    color: "from-emerald-500 to-teal-500",
+    color: "from-accent-400 to-accent-600",
   },
   {
     name: "Bank Transfers",
     description:
       "Withdraw to any Nigerian bank account or receive money via virtual accounts.",
     icon: ArrowLeftRight,
-    color: "from-orange-500 to-amber-500",
+    color: "from-accent-500 to-accent-700",
   },
   {
     name: "Biometric Security",
     description:
       "Protect your account with fingerprint or face recognition for maximum security.",
     icon: Fingerprint,
-    color: "from-pink-500 to-rose-500",
+    color: "from-primary-600 to-primary-800",
   },
   {
     name: "Real-time Alerts",
     description:
       "Get instant notifications for every transaction and account activity.",
     icon: Bell,
-    color: "from-indigo-500 to-violet-500",
+    color: "from-primary-300 to-primary-500",
   },
   {
     name: "Virtual Accounts",
     description:
       "Get a dedicated virtual account number to receive transfers from any bank.",
     icon: Banknote,
-    color: "from-cyan-500 to-blue-500",
+    color: "from-accent-300 to-accent-500",
   },
   {
     name: "Mobile First",
     description:
       "Designed for mobile from the ground up with a beautiful, intuitive interface.",
     icon: Smartphone,
-    color: "from-fuchsia-500 to-pink-500",
+    color: "from-primary-500 to-primary-600",
   },
 ];
 

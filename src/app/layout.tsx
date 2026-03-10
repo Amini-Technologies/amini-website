@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   title: "Amini - Send Money Instantly Across Nigeria",
   description: "The fastest way to send and receive money in Nigeria. Free transfers, instant payments, and seamless bill payments all in one app.",
   keywords: ["money transfer", "Nigeria", "fintech", "mobile banking", "wallet", "payments"],
+  icons: {
+    icon: "/favicon.png",
+    apple: "/app-icon.png",
+  },
 };
 
 export default function RootLayout({

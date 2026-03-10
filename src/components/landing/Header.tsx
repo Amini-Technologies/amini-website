@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Wallet } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 const navigation = [
   { name: "Features", href: "#features" },
@@ -34,8 +35,8 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-3 group">
-            <div className="h-11 w-11 rounded-2xl gradient-bg flex items-center justify-center shadow-lg shadow-primary-500/30 transition-transform group-hover:scale-110">
-              <Wallet className="h-6 w-6 text-white" />
+            <div className="h-11 w-11 rounded-2xl overflow-hidden shadow-lg shadow-primary-600/30 transition-transform group-hover:scale-110">
+              <Image src="/app-icon.png" alt="Amini" width={44} height={44} className="w-full h-full object-cover" />
             </div>
             <span className="text-2xl font-bold gradient-text">Amini</span>
           </Link>

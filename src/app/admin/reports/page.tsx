@@ -29,7 +29,7 @@ const reportTypes = [
     name: "Financial Report",
     description: "Revenue, fees, and financial summary",
     icon: Wallet,
-    color: "bg-purple-100 text-purple-600",
+    color: "bg-accent-100 text-primary-600",
   },
   {
     name: "Growth Report",

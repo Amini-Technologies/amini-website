@@ -44,7 +44,7 @@ const typeIcons = {
 const typeColors = {
   transfer: "bg-blue-100 text-blue-700",
   deposit: "bg-green-100 text-green-700",
-  withdrawal: "bg-purple-100 text-purple-700",
+  withdrawal: "bg-accent-100 text-primary-700",
   bill_payment: "bg-amber-100 text-amber-700",
 };
 

@@ -102,8 +102,8 @@ export default function HelpPage() {
         </div>
         <div className="card hover:shadow-xl transition-all cursor-pointer group">
           <div className="flex items-center gap-4">
-            <div className="rounded-lg bg-purple-100 p-3 group-hover:bg-purple-200 transition-colors">
-              <Mail className="h-6 w-6 text-purple-600" />
+            <div className="rounded-lg bg-accent-100 p-3 group-hover:bg-accent-200 transition-colors">
+              <Mail className="h-6 w-6 text-primary-600" />
             </div>
             <div>
               <h3 className="font-medium text-gray-900">Email Support</h3>
