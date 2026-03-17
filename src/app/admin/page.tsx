@@ -170,7 +170,7 @@ export default function AdminDashboard() {
         {stats.map((stat) => (
           <div
             key={stat.name}
-            className="card hover:shadow-xl transition-shadow"
+            className="card hover:border-primary-200 transition-all"
           >
             <div className="flex items-center justify-between">
               <div className={`rounded-lg p-2 ${stat.color}`}>
@@ -413,7 +413,7 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <a
           href="/admin/users"
-          className="card hover:shadow-xl transition-all hover:-translate-y-1 group cursor-pointer"
+          className="card hover:border-primary-200 transition-all hover:-translate-y-1 group cursor-pointer"
         >
           <div className="flex items-center gap-4">
             <div className="rounded-lg bg-blue-100 p-3 group-hover:bg-blue-200 transition-colors">
@@ -430,7 +430,7 @@ export default function AdminDashboard() {
 
         <a
           href="/admin/wallets"
-          className="card hover:shadow-xl transition-all hover:-translate-y-1 group cursor-pointer"
+          className="card hover:border-primary-200 transition-all hover:-translate-y-1 group cursor-pointer"
         >
           <div className="flex items-center gap-4">
             <div className="rounded-lg bg-green-100 p-3 group-hover:bg-green-200 transition-colors">
@@ -447,7 +447,7 @@ export default function AdminDashboard() {
 
         <a
           href="/admin/transactions"
-          className="card hover:shadow-xl transition-all hover:-translate-y-1 group cursor-pointer"
+          className="card hover:border-primary-200 transition-all hover:-translate-y-1 group cursor-pointer"
         >
           <div className="flex items-center gap-4">
             <div className="rounded-lg bg-accent-100 p-3 group-hover:bg-accent-200 transition-colors">
@@ -464,7 +464,7 @@ export default function AdminDashboard() {
 
         <a
           href="/admin/security"
-          className="card hover:shadow-xl transition-all hover:-translate-y-1 group cursor-pointer"
+          className="card hover:border-primary-200 transition-all hover:-translate-y-1 group cursor-pointer"
         >
           <div className="flex items-center gap-4">
             <div className="rounded-lg bg-red-100 p-3 group-hover:bg-red-200 transition-colors">

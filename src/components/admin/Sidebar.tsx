@@ -46,7 +46,7 @@ export default function AdminSidebar() {
     <>
       {/* Mobile menu button */}
       <button
-        className="lg:hidden fixed top-4 left-4 z-50 rounded-lg bg-white p-2 shadow-lg border border-gray-200"
+        className="lg:hidden fixed top-4 left-4 z-50 rounded-lg bg-white p-2 border border-gray-200"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
       >
         {mobileMenuOpen ? (

@@ -71,7 +71,7 @@ export default function AdminHeader() {
             </button>
 
             {showNotifications && (
-              <div className="absolute right-0 mt-2 w-80 rounded-xl bg-white shadow-lg ring-1 ring-black/5">
+              <div className="absolute right-0 mt-2 w-80 rounded-xl bg-white border border-gray-200">
                 <div className="border-b border-gray-100 px-4 py-3">
                   <h3 className="text-sm font-semibold text-gray-900">
                     Notifications
@@ -142,7 +142,7 @@ export default function AdminHeader() {
             </button>
 
             {showUserMenu && (
-              <div className="absolute right-0 mt-2 w-56 rounded-xl bg-white shadow-lg ring-1 ring-black/5">
+              <div className="absolute right-0 mt-2 w-56 rounded-xl bg-white border border-gray-200">
                 <div className="border-b border-gray-100 px-4 py-3">
                   <p className="text-sm font-medium text-gray-900">
                     {user?.name}

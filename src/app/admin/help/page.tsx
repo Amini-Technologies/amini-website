@@ -78,7 +78,7 @@ export default function HelpPage() {
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <div className="card hover:shadow-xl transition-all cursor-pointer group">
+        <div className="card hover:border-primary-200 transition-all cursor-pointer group">
           <div className="flex items-center gap-4">
             <div className="rounded-lg bg-blue-100 p-3 group-hover:bg-blue-200 transition-colors">
               <Book className="h-6 w-6 text-blue-600" />
@@ -89,7 +89,7 @@ export default function HelpPage() {
             </div>
           </div>
         </div>
-        <div className="card hover:shadow-xl transition-all cursor-pointer group">
+        <div className="card hover:border-primary-200 transition-all cursor-pointer group">
           <div className="flex items-center gap-4">
             <div className="rounded-lg bg-green-100 p-3 group-hover:bg-green-200 transition-colors">
               <MessageCircle className="h-6 w-6 text-green-600" />
@@ -100,7 +100,7 @@ export default function HelpPage() {
             </div>
           </div>
         </div>
-        <div className="card hover:shadow-xl transition-all cursor-pointer group">
+        <div className="card hover:border-primary-200 transition-all cursor-pointer group">
           <div className="flex items-center gap-4">
             <div className="rounded-lg bg-accent-100 p-3 group-hover:bg-accent-200 transition-colors">
               <Mail className="h-6 w-6 text-primary-600" />
@@ -122,7 +122,7 @@ export default function HelpPage() {
           {helpTopics.map((topic) => (
             <div
               key={topic.title}
-              className="p-4 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-md transition-all cursor-pointer group"
+              className="p-4 rounded-xl border border-gray-200 hover:border-primary-300 transition-all cursor-pointer group"
             >
               <div className="flex items-start justify-between">
                 <div>

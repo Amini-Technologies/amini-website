@@ -98,7 +98,7 @@ export default function ReportsPage() {
           {reportTypes.map((report) => (
             <div
               key={report.name}
-              className="flex items-start gap-4 p-4 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-md transition-all cursor-pointer"
+              className="flex items-start gap-4 p-4 rounded-xl border border-gray-200 hover:border-primary-300 transition-all cursor-pointer"
             >
               <div className={`rounded-lg p-3 ${report.color}`}>
                 <report.icon className="h-6 w-6" />
