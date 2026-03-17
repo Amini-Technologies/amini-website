@@ -15,6 +15,8 @@ import {
   Shield,
   HelpCircle,
   X,
+  TrendingUp,
+  HandHeart,
 } from "lucide-react";
 
 const navigation = [
@@ -22,6 +24,8 @@ const navigation = [
   { name: "Users", href: "/admin/users", icon: Users },
   { name: "Wallets", href: "/admin/wallets", icon: CreditCard },
   { name: "Transactions", href: "/admin/transactions", icon: ArrowLeftRight },
+  { name: "Adashi & Savings", href: "/admin/savings", icon: TrendingUp },
+  { name: "Gudunmawa", href: "/admin/gudunmawa", icon: HandHeart },
   { name: "Reports", href: "/admin/reports", icon: FileText },
   { name: "Security", href: "/admin/security", icon: Shield },
 ];

@@ -235,6 +235,48 @@ export function useAuditLogs(params?: {
 }
 
 /**
+ * Hook for savings stats
+ */
+export function useSavingsStats() {
+  return useAdminApi(() => adminApi.getSavingsStats());
+}
+
+/**
+ * Hook for auto savings list
+ */
+export function useAutoSavings(params?: { search?: string; status?: string; page?: number; limit?: number }) {
+  return useAdminApi(() => adminApi.getAutoSavings(params), [JSON.stringify(params)]);
+}
+
+/**
+ * Hook for target savings list
+ */
+export function useTargetSavings(params?: { search?: string; status?: string; page?: number; limit?: number }) {
+  return useAdminApi(() => adminApi.getTargetSavings(params), [JSON.stringify(params)]);
+}
+
+/**
+ * Hook for locked savings list
+ */
+export function useLockedSavings(params?: { search?: string; status?: string; page?: number; limit?: number }) {
+  return useAdminApi(() => adminApi.getLockedSavings(params), [JSON.stringify(params)]);
+}
+
+/**
+ * Hook for group savings list
+ */
+export function useGroupSavings(params?: { search?: string; status?: string; page?: number; limit?: number }) {
+  return useAdminApi(() => adminApi.getGroupSavings(params), [JSON.stringify(params)]);
+}
+
+/**
+ * Hook for gudunmawa list
+ */
+export function useGudunmawas(params?: { search?: string; status?: string; page?: number; limit?: number }) {
+  return useAdminApi(() => adminApi.getGudunmawas(params), [JSON.stringify(params)]);
+}
+
+/**
  * Hook for notifications
  */
 export function useNotifications(params?: {

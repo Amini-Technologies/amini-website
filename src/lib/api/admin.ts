@@ -501,6 +501,72 @@ class AdminApiService {
   }
 
   // ============================================
+  // Savings
+  // ============================================
+
+  async getSavingsStats() {
+    return this.request('/admin/savings/stats');
+  }
+
+  async getAutoSavings(params?: { search?: string; status?: string; page?: number; limit?: number }) {
+    const searchParams = new URLSearchParams();
+    if (params) {
+      Object.entries(params).forEach(([key, value]) => {
+        if (value !== undefined) searchParams.append(key, String(value));
+      });
+    }
+    return this.request(`/admin/savings/auto?${searchParams.toString()}`);
+  }
+
+  async getTargetSavings(params?: { search?: string; status?: string; page?: number; limit?: number }) {
+    const searchParams = new URLSearchParams();
+    if (params) {
+      Object.entries(params).forEach(([key, value]) => {
+        if (value !== undefined) searchParams.append(key, String(value));
+      });
+    }
+    return this.request(`/admin/savings/target?${searchParams.toString()}`);
+  }
+
+  async getLockedSavings(params?: { search?: string; status?: string; page?: number; limit?: number }) {
+    const searchParams = new URLSearchParams();
+    if (params) {
+      Object.entries(params).forEach(([key, value]) => {
+        if (value !== undefined) searchParams.append(key, String(value));
+      });
+    }
+    return this.request(`/admin/savings/locked?${searchParams.toString()}`);
+  }
+
+  async getGroupSavings(params?: { search?: string; status?: string; page?: number; limit?: number }) {
+    const searchParams = new URLSearchParams();
+    if (params) {
+      Object.entries(params).forEach(([key, value]) => {
+        if (value !== undefined) searchParams.append(key, String(value));
+      });
+    }
+    return this.request(`/admin/savings/group?${searchParams.toString()}`);
+  }
+
+  // ============================================
+  // Gudunmawa
+  // ============================================
+
+  async getGudunmawas(params?: { search?: string; status?: string; page?: number; limit?: number }) {
+    const searchParams = new URLSearchParams();
+    if (params) {
+      Object.entries(params).forEach(([key, value]) => {
+        if (value !== undefined) searchParams.append(key, String(value));
+      });
+    }
+    return this.request(`/admin/gudunmawa?${searchParams.toString()}`);
+  }
+
+  async getGudunmawaById(id: string) {
+    return this.request(`/admin/gudunmawa/${id}`);
+  }
+
+  // ============================================
   // Notifications
   // ============================================
 
