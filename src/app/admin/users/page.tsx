@@ -21,7 +21,7 @@ import {
 import { formatDate } from "@/lib/utils";
 import { useUsers, useAdminMutation } from "@/hooks/useAdminApi";
 import { adminApi } from "@/lib/api/admin";
-import { LoadingState, TableSkeleton } from "@/components/admin/ui/LoadingState";
+import { TableSkeleton } from "@/components/admin/ui/LoadingState";
 import { ErrorState } from "@/components/admin/ui/ErrorState";
 
 const statusColors: Record<string, string> = {
