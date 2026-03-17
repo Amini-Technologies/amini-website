@@ -10,7 +10,7 @@ import {
   ArrowLeftRight,
 } from "lucide-react";
 import { formatCurrency, formatNumber } from "@/lib/utils";
-import { dashboardStats } from "@/lib/mockData";
+import { useDashboardStats } from "@/hooks/useAdminApi";
 
 const reportTypes = [
   {
@@ -40,6 +40,8 @@ const reportTypes = [
 ];
 
 export default function ReportsPage() {
+  const { data: dashboardData, isLoading } = useDashboardStats();
+
   return (
     <div className="space-y-6">
       {/* Page header */}
@@ -56,36 +58,59 @@ export default function ReportsPage() {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
         <div className="card">
           <p className="text-sm text-gray-600">Total Users</p>
-          <p className="text-2xl font-bold text-gray-900">
-            {formatNumber(dashboardStats.totalUsers)}
-          </p>
-          <p className="text-xs text-green-600 mt-1">
-            +{dashboardStats.recentGrowth.users}% this month
-          </p>
+          {isLoading ? (
+            <div className="h-8 w-20 animate-pulse bg-gray-200 rounded mt-1" />
+          ) : (
+            <>
+              <p className="text-2xl font-bold text-gray-900">
+                {formatNumber(dashboardData?.users?.total ?? 0)}
+              </p>
+              {dashboardData?.users?.growth != null && (
+                <p className="text-xs text-green-600 mt-1">
+                  {dashboardData.users.growth >= 0 ? "+" : ""}
+                  {dashboardData.users.growth}% this month
+                </p>
+              )}
+            </>
+          )}
         </div>
         <div className="card">
           <p className="text-sm text-gray-600">Total Transactions</p>
-          <p className="text-2xl font-bold text-gray-900">
-            {formatNumber(dashboardStats.totalTransactions)}
-          </p>
-          <p className="text-xs text-green-600 mt-1">
-            +{dashboardStats.recentGrowth.transactions}% this month
-          </p>
+          {isLoading ? (
+            <div className="h-8 w-20 animate-pulse bg-gray-200 rounded mt-1" />
+          ) : (
+            <>
+              <p className="text-2xl font-bold text-gray-900">
+                {formatNumber(dashboardData?.transactions?.total ?? 0)}
+              </p>
+              {dashboardData?.transactions?.growth != null && (
+                <p className="text-xs text-green-600 mt-1">
+                  {dashboardData.transactions.growth >= 0 ? "+" : ""}
+                  {dashboardData.transactions.growth}% this month
+                </p>
+              )}
+            </>
+          )}
         </div>
         <div className="card">
-          <p className="text-sm text-gray-600">Transaction Volume</p>
-          <p className="text-2xl font-bold text-gray-900">
-            {formatCurrency(dashboardStats.transactionVolume)}
-          </p>
-          <p className="text-xs text-green-600 mt-1">
-            +{dashboardStats.recentGrowth.volume}% this month
-          </p>
+          <p className="text-sm text-gray-600">Today&apos;s Volume</p>
+          {isLoading ? (
+            <div className="h-8 w-24 animate-pulse bg-gray-200 rounded mt-1" />
+          ) : (
+            <p className="text-2xl font-bold text-gray-900">
+              {formatCurrency(Number(dashboardData?.transactions?.todayVolume ?? 0))}
+            </p>
+          )}
         </div>
         <div className="card">
           <p className="text-sm text-gray-600">Total Wallet Balance</p>
-          <p className="text-2xl font-bold text-gray-900">
-            {formatCurrency(dashboardStats.totalWalletBalance)}
-          </p>
+          {isLoading ? (
+            <div className="h-8 w-24 animate-pulse bg-gray-200 rounded mt-1" />
+          ) : (
+            <p className="text-2xl font-bold text-gray-900">
+              {formatCurrency(Number(dashboardData?.wallets?.totalBalance ?? 0))}
+            </p>
+          )}
         </div>
       </div>
 
