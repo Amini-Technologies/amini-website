@@ -6,10 +6,11 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const navigation = [
-  { name: "Features", href: "#features" },
-  { name: "How It Works", href: "#how-it-works" },
-  { name: "Security", href: "#security" },
-  { name: "Download", href: "#download" },
+  { name: "Features", href: "/#features" },
+  { name: "How It Works", href: "/#how-it-works" },
+  { name: "Security", href: "/#security" },
+  { name: "Blog", href: "/blog" },
+  { name: "Download", href: "/#download" },
 ];
 
 export default function Header() {
@@ -26,19 +27,19 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 bg-white ${
         scrolled
-          ? "glass shadow-lg shadow-gray-200/50 py-3"
-          : "bg-transparent py-5"
+          ? "shadow-lg shadow-gray-200/50 py-3"
+          : "py-5"
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-3 group">
-            <div className="h-11 w-11 rounded-2xl overflow-hidden shadow-lg shadow-primary-600/30 transition-transform group-hover:scale-110">
+            <div className="h-11 w-11 rounded-2xl overflow-hidden transition-transform group-hover:scale-110">
               <Image src="/app-icon.png" alt="Amini" width={44} height={44} className="w-full h-full object-cover" />
             </div>
-            <span className="text-2xl font-bold gradient-text">Amini</span>
+            <span className="text-2xl font-bold text-gray-900">Amini</span>
           </Link>
         </div>
 
@@ -70,12 +71,6 @@ export default function Header() {
         </div>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-3">
-          <Link
-            href="/admin/login"
-            className="btn-ghost text-sm"
-          >
-            Admin
-          </Link>
           <a href="#download" className="btn-primary text-sm py-3 px-6">
             Get Started
           </a>
@@ -99,13 +94,6 @@ export default function Header() {
               {item.name}
             </a>
           ))}
-          <Link
-            href="/admin/login"
-            className="block rounded-xl px-4 py-3 text-base font-medium text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Admin
-          </Link>
           <a
             href="#download"
             className="block btn-primary text-center mt-4"

@@ -17,74 +17,75 @@ const features = [
     description:
       "Send money to other Amini users instantly and completely free. No waiting, no fees.",
     icon: Send,
-    color: "from-primary-500 to-primary-700",
+    tone: "primary" as const,
   },
   {
     name: "Digital Wallet",
     description:
       "A secure digital wallet to store, send, and receive money anytime, anywhere.",
     icon: Wallet,
-    color: "from-primary-400 to-primary-600",
+    tone: "primary" as const,
   },
   {
     name: "Bill Payments",
     description:
       "Pay for airtime, data, electricity, cable TV, and more right from your phone.",
     icon: CreditCard,
-    color: "from-accent-400 to-accent-600",
+    tone: "accent" as const,
   },
   {
     name: "Bank Transfers",
     description:
       "Withdraw to any Nigerian bank account or receive money via virtual accounts.",
     icon: ArrowLeftRight,
-    color: "from-accent-500 to-accent-700",
+    tone: "primary" as const,
   },
   {
     name: "Biometric Security",
     description:
       "Protect your account with fingerprint or face recognition for maximum security.",
     icon: Fingerprint,
-    color: "from-primary-600 to-primary-800",
+    tone: "primary" as const,
   },
   {
     name: "Real-time Alerts",
     description:
       "Get instant notifications for every transaction and account activity.",
     icon: Bell,
-    color: "from-primary-300 to-primary-500",
+    tone: "accent" as const,
   },
   {
     name: "Virtual Accounts",
     description:
       "Get a dedicated virtual account number to receive transfers from any bank.",
     icon: Banknote,
-    color: "from-accent-300 to-accent-500",
+    tone: "primary" as const,
   },
   {
     name: "Mobile First",
     description:
       "Designed for mobile from the ground up with a beautiful, intuitive interface.",
     icon: Smartphone,
-    color: "from-primary-500 to-primary-600",
+    tone: "primary" as const,
   },
 ];
 
+const toneStyles = {
+  primary: "bg-primary-50 text-primary-600",
+  accent: "bg-accent-50 text-accent-600",
+};
+
 export default function Features() {
   return (
-    <section id="features" className="section-padding relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 -z-10 gradient-bg-subtle" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] rounded-full bg-gradient-to-b from-primary-100/50 to-transparent blur-3xl -z-10" />
-
+    <section id="features" className="section-padding relative bg-white">
       <div className="container-width">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center rounded-full bg-primary-100 px-4 py-1.5 text-sm font-medium text-primary-700 mb-6">
+          <div className="inline-flex items-center rounded-full border border-gray-200 px-4 py-1.5 text-sm font-medium text-gray-600 mb-6">
             Features
           </div>
-          <h2 className="text-balance">
+          <h2 className="text-balance text-gray-900">
             Everything you need to{" "}
-            <span className="gradient-text">manage your money</span>
+            <span className="text-accent-500">manage your money</span>
           </h2>
           <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
             Amini comes packed with features that make managing your finances
@@ -93,20 +94,21 @@ export default function Features() {
         </div>
 
         <div className="mx-auto mt-20 max-w-6xl">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {features.map((feature, index) => (
+          <div className="grid grid-cols-1 gap-px bg-gray-200 sm:grid-cols-2 lg:grid-cols-4 rounded-3xl overflow-hidden border border-gray-200">
+            {features.map((feature) => (
               <div
                 key={feature.name}
-                className="group card card-hover cursor-default"
-                style={{ animationDelay: `${index * 0.05}s` }}
+                className="group relative bg-white p-8 transition-colors duration-200 hover:bg-gray-50"
               >
-                <div className={`mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${feature.color} shadow-lg transition-transform group-hover:scale-110`}>
-                  <feature.icon className="h-7 w-7 text-white" />
+                <div
+                  className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${toneStyles[feature.tone]}`}
+                >
+                  <feature.icon className="h-6 w-6" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900">
                   {feature.name}
                 </h3>
-                <p className="mt-3 text-gray-600 leading-relaxed">
+                <p className="mt-3 text-gray-600 leading-relaxed text-sm">
                   {feature.description}
                 </p>
               </div>
@@ -116,17 +118,26 @@ export default function Features() {
 
         {/* Stats section */}
         <div className="mt-24 mx-auto max-w-5xl">
-          <div className="rounded-4xl gradient-bg p-10 sm:p-14">
+          <div className="rounded-3xl border border-gray-200 p-10 sm:p-14 bg-white">
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
               {[
-                { value: "100K+", label: "Active Users" },
-                { value: "₦5B+", label: "Transactions" },
+                { value: "10K+", label: "Active Users" },
+                { value: "₦20M+", label: "Transactions" },
                 { value: "99.9%", label: "Uptime" },
-                { value: "4.9", label: "App Rating" },
+                {
+                  value: (
+                    <>
+                      4.9<span className="text-accent-500">★</span>
+                    </>
+                  ),
+                  label: "App Rating",
+                },
               ].map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-3xl sm:text-4xl font-bold text-white">{stat.value}</div>
-                  <div className="mt-2 text-sm text-white/80">{stat.label}</div>
+                  <div className="text-3xl sm:text-4xl font-bold text-gray-900">
+                    {stat.value}
+                  </div>
+                  <div className="mt-2 text-sm text-gray-500">{stat.label}</div>
                 </div>
               ))}
             </div>

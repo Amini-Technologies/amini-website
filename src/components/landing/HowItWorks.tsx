@@ -31,21 +31,15 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="section-padding relative overflow-hidden bg-white">
-      {/* Background decorations */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-gradient-to-r from-primary-100/30 to-transparent blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-gradient-to-l from-primary-100/30 to-transparent blur-3xl" />
-      </div>
-
+    <section id="how-it-works" className="section-padding relative bg-gray-50">
       <div className="container-width">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center rounded-full bg-primary-100 px-4 py-1.5 text-sm font-medium text-primary-700 mb-6">
+          <div className="inline-flex items-center rounded-full border border-gray-200 bg-white px-4 py-1.5 text-sm font-medium text-gray-600 mb-6">
             How It Works
           </div>
-          <h2 className="text-balance">
+          <h2 className="text-balance text-gray-900">
             Get started in{" "}
-            <span className="gradient-text">4 simple steps</span>
+            <span className="text-accent-500">4 simple steps</span>
           </h2>
           <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
             Setting up your Amini account takes less than 5 minutes.
@@ -54,36 +48,35 @@ export default function HowItWorks() {
         </div>
 
         <div className="mx-auto mt-20 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((step, index) => (
               <div key={step.number} className="relative group">
                 {/* Connection line */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-14 left-[60%] w-full h-0.5 bg-gradient-to-r from-primary-300 to-primary-100" />
+                  <div className="hidden lg:block absolute top-14 left-[calc(50%+2rem)] right-[-1.5rem] h-px bg-gray-200" />
                 )}
 
-                <div className="relative bg-white rounded-3xl p-8 shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-primary-100">
-                  {/* Step number badge */}
-                  <div className="absolute -top-4 left-8 bg-primary-600 text-white text-sm font-bold px-4 py-1.5 rounded-full shadow-lg shadow-primary-500/30">
-                    Step {step.number}
+                <div className="relative bg-white rounded-2xl p-7 border border-gray-200 transition-colors duration-200 hover:border-gray-300">
+                  <div className="text-xs font-semibold text-gray-400 tracking-wider">
+                    STEP {step.number}
                   </div>
 
-                  <div className="mt-4 flex h-16 w-16 items-center justify-center rounded-2xl gradient-bg shadow-lg shadow-primary-500/20 transition-transform group-hover:scale-110">
-                    <step.icon className="h-8 w-8 text-white" />
+                  <div className="mt-3 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary-600">
+                    <step.icon className="h-6 w-6" />
                   </div>
 
-                  <h3 className="mt-6 text-xl font-semibold text-gray-900">
+                  <h3 className="mt-5 text-lg font-semibold text-gray-900">
                     {step.title}
                   </h3>
-                  <p className="mt-3 text-gray-600 leading-relaxed">
+                  <p className="mt-3 text-gray-600 leading-relaxed text-sm">
                     {step.description}
                   </p>
                 </div>
 
                 {/* Arrow for mobile */}
                 {index < steps.length - 1 && (
-                  <div className="flex justify-center py-4 lg:hidden">
-                    <ArrowRight className="h-6 w-6 text-primary-300 rotate-90" />
+                  <div className="flex justify-center py-3 lg:hidden">
+                    <ArrowRight className="h-5 w-5 text-gray-300 rotate-90" />
                   </div>
                 )}
               </div>
