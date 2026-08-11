@@ -2,71 +2,170 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-}
+/* Tokens live in src/styles/variables.css (primitives) and
+   src/styles/theme.css (semantic roles). Both are imported by the root
+   layout ahead of this file. See DESIGN.md. */
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--canvas-1));
+    color: rgb(var(--ink-1));
+    font-family: var(--font-body);
+    font-size: var(--body-md);
+    line-height: var(--leading-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Any element carrying a theme scope paints its own ground, so a dark band
+     is one attribute rather than a hand-tuned set of overrides. Kept in the
+     base layer so component and utility backgrounds still win over it. */
+  [data-theme],
+  .surface-dark {
+    background-color: rgb(var(--canvas-1));
+    color: rgb(var(--ink-1));
+  }
+
+  /* Display scale. Headings never carry body type on the same line. */
   h1 {
-    @apply text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl;
+    @apply font-display font-bold text-display-xs sm:text-display-sm lg:text-display-lg;
   }
   h2 {
-    @apply text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl;
+    @apply font-display font-bold text-display-xs sm:text-display-sm md:text-display-md;
   }
   h3 {
-    @apply text-xl font-semibold sm:text-2xl;
+    @apply font-display font-semibold text-body-lg sm:text-display-xs;
+  }
+
+  ::selection {
+    background-color: rgb(var(--accent-1));
+    color: rgb(var(--on-accent));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--focus-ring));
+    outline-offset: 2px;
   }
 }
 
 @layer components {
+  /* ---------------------------------------------------------------------
+     Buttons. accent-1 is reserved for the single primary action in a view.
+     Everything else is a line or a ghost.
+     ------------------------------------------------------------------- */
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-primary-600 px-8 py-4 text-base font-semibold text-white transition-colors duration-200 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply inline-flex items-center justify-center rounded-full bg-accent-1 px-6 py-3
+           text-body-md font-semibold text-accent-on
+           transition-colors duration-base ease-standard
+           hover:bg-accent-hover
+           disabled:cursor-not-allowed disabled:opacity-50;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-gray-300 px-8 py-4 text-base font-semibold text-gray-900 transition-colors duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center rounded-full border border-line-2
+           bg-canvas-1 px-6 py-3 text-body-md font-semibold text-ink-1
+           transition-colors duration-base ease-standard
+           hover:border-line-3 hover:bg-canvas-2;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-medium text-gray-700 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-900;
+    @apply inline-flex items-center justify-center rounded-full px-4 py-2
+           text-body-md font-medium text-ink-2
+           transition-colors duration-base ease-standard
+           hover:bg-canvas-2 hover:text-ink-1;
   }
 
+  /* Compact pill used in the nav bar, the hero, and the store badges. It is
+     the same accent-1 fill as .btn-primary at a smaller step. */
+  .btn-pill {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-accent-1 px-5 py-2.5
+           text-body-sm font-medium text-accent-on
+           transition-colors duration-base ease-standard
+           hover:bg-accent-hover;
+  }
+
+  .btn-pill-line {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-line-1
+           bg-canvas-1 px-5 py-2.5 text-body-sm font-medium text-ink-1
+           transition-colors duration-base ease-standard
+           hover:border-line-2 hover:bg-canvas-2;
+  }
+
+  /* Nav links sit as ghost pills that fill on hover. */
+  .nav-link {
+    @apply inline-flex items-center rounded-md px-3 py-2 text-body-sm font-medium
+           text-ink-2 transition-colors duration-base ease-standard
+           hover:bg-canvas-2 hover:text-ink-1;
+  }
+
+  .nav-link-active {
+    @apply text-ink-1;
+  }
+
+  /* ---------------------------------------------------------------------
+     Surfaces. canvas → lifted → inset.
+     ------------------------------------------------------------------- */
+
+  /* The mint panel. The one large tinted shape the layout leans on: hero
+     copy block, step markers, FAQ rows. */
+  .panel {
+    @apply rounded-xl bg-accent-panel p-8;
+  }
   .card {
-    @apply rounded-2xl bg-white p-8 border border-gray-200 transition-colors duration-200;
+    @apply rounded-xl border border-line-1 bg-canvas-1 p-6
+           transition-colors duration-base ease-standard;
   }
 
   .card-hover {
-    @apply hover:border-gray-300;
+    @apply hover:border-line-2;
+  }
+
+  .well {
+    @apply rounded-lg bg-canvas-3 p-4;
   }
 
   .input {
-    @apply w-full rounded-2xl border border-gray-200 px-5 py-4 text-gray-900 placeholder-gray-400 focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-500/10 transition-all;
+    @apply w-full rounded-lg border border-line-2 bg-canvas-1 px-4 py-3
+           text-body-md text-ink-1 placeholder:text-ink-3
+           transition-colors duration-base ease-standard
+           focus:border-accent-1 focus:outline-none
+           focus:ring-4 focus:ring-accent-1/10;
+  }
+
+  /* Chips / eyebrows */
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-line-1
+           bg-canvas-1 px-4 py-2 text-body-sm font-medium text-ink-2;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-line-1
+           px-4 py-1 font-mono text-mono-sm uppercase tracking-[0.12em] text-ink-3;
+  }
+
+  /* accent-2 marks a phrase inside a heading. accent-1 stays on CTAs. */
+  .mark-accent {
+    @apply text-accent-2;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 via-primary-500 to-primary-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent;
   }
 
   .gradient-bg {
-    @apply bg-gradient-to-br from-primary-600 via-primary-500 to-primary-400;
+    @apply bg-gradient-to-br from-accent-1 to-accent-2;
   }
 
   .gradient-bg-subtle {
-    @apply bg-gradient-to-br from-primary-50 via-white to-primary-50;
+    @apply bg-gradient-to-b from-canvas-2 to-canvas-1;
   }
 
+  /* Rhythm: 96px, opening to 128px at the wide breakpoint. */
   .section-padding {
-    @apply py-24 sm:py-32 lg:py-40;
+    @apply py-24 sm:py-32;
   }
 
   .container-width {
@@ -79,38 +178,67 @@ body {
     text-wrap: balance;
   }
 
+  /* Tickers fade out at both edges rather than being cut by the viewport. */
+  .ticker-mask {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 12.5%,
+      #000 87.5%,
+      transparent 100%
+    );
+  }
+
+  /* A running track pauses when the visitor wants to read it. */
+  .ticker-track:hover {
+    animation-play-state: paused;
+  }
+
   .glass {
-    @apply bg-white/90 backdrop-blur-xl;
+    background-color: rgb(var(--canvas-1) / 0.85);
+    backdrop-filter: blur(16px);
   }
 
   .glass-dark {
-    @apply bg-gray-900/90 backdrop-blur-xl;
+    background-color: rgb(var(--neutral-950) / 0.85);
+    backdrop-filter: blur(16px);
   }
 
   .blur-gradient {
-    @apply absolute inset-0 bg-gradient-to-r from-primary-400/30 via-primary-500/20 to-primary-600/30 blur-3xl;
+    @apply absolute inset-0 bg-gradient-to-r from-accent-1/20 to-accent-2/20 blur-3xl;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
   }
 }
 
-/* Custom scrollbar */
+/* Unlayered so it wins over every animation and transition above. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
-
 ::-webkit-scrollbar-track {
-  @apply bg-gray-50;
+  background-color: rgb(var(--canvas-2));
 }
-
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 rounded-full;
+  background-color: rgb(var(--line-2));
+  border-radius: var(--radius-full);
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary-400;
-}
-
-/* Selection color */
-::selection {
-  @apply bg-primary-200 text-primary-900;
+  background-color: rgb(var(--line-3));
 }

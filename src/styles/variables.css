@@ -1,0 +1,149 @@
+/* =========================================================================
+   Amini — variables.css
+   PRIMITIVES. Raw values only. No roles, no meaning, no opinions.
+   Nothing in the app should reference these directly — use theme.css roles.
+
+   Colour values are stored as space-separated RGB channels so that Tailwind
+   and hand-written CSS can both apply alpha:
+
+       rgb(var(--brand-600))            -> solid
+       rgb(var(--brand-600) / 0.12)     -> 12% alpha
+   ========================================================================= */
+
+:root {
+  /* -----------------------------------------------------------------------
+     Brand ramp — the single Amini hue (~176°), anchored on the primary.
+     --brand-600 (#02534D) IS the Amini primary. Every other step is a tint
+     or shade of it. There is no second brand hue in this system.
+     --------------------------------------------------------------------- */
+  --brand-50:  237 250 249; /* #EDFAF9 */
+  --brand-100: 208 245 243; /* #D0F5F3 */
+  --brand-200: 163 235 232; /* #A3EBE8 */
+  --brand-300: 110 219 214; /* #6EDBD6 */
+  --brand-400:  58 191 186; /* #3ABFBA */
+  --brand-500:  30 158 153; /* #1E9E99 */
+  --brand-550:  13 118 113; /* #0D7671 */
+  --brand-600:   2  83  77; /* #02534D  ← Amini primary */
+  --brand-700:   1  71  66; /* #014742 */
+  --brand-800:   1  59  54; /* #013B36 */
+  --brand-850:  14  50  47; /* #0E322F */
+  --brand-900:   1  47  43; /* #012F2B */
+  --brand-950:   1  25  23; /* #011917 */
+
+  /* -----------------------------------------------------------------------
+     Neutral ramp — greys carrying a faint cast of the brand hue so that
+     surfaces and text sit in the same family as the primary rather than
+     reading as a separate cold grey.
+     --------------------------------------------------------------------- */
+  --neutral-0:   255 255 255; /* #FFFFFF */
+  --neutral-25:  249 251 251; /* #F9FBFB */
+  --neutral-50:  244 247 247; /* #F4F7F7 */
+  --neutral-100: 234 240 239; /* #EAF0EF */
+  --neutral-200: 221 230 229; /* #DDE6E5 */
+  --neutral-300: 198 212 210; /* #C6D4D2 */
+  --neutral-400: 166 191 188; /* #A6BFBC */
+  --neutral-500: 137 162 159; /* #89A29F */
+  --neutral-550: 112 139 136; /* #708B88 */
+  --neutral-600:  90 113 110; /* #5A716E */
+  --neutral-700:  69  93  90; /* #455D5A */
+  --neutral-800:  44  82  78; /* #2C524E */
+  --neutral-850:  30  61  58; /* #1E3D3A */
+  --neutral-900:  12  37  35; /* #0C2523 */
+  --neutral-925:  10  31  29; /* #0A1F1D */
+  --neutral-950:   7  27  25; /* #071B19 */
+  --neutral-975:   4  19  18; /* #041312 */
+
+  /* -----------------------------------------------------------------------
+     Status ramps — reserved for state. Never for brand. See DESIGN.md.
+     --------------------------------------------------------------------- */
+  --green-50:  230 244 236; /* #E6F4EC */
+  --green-300:  78 203 142; /* #4ECB8E */
+  --green-600:  15 122  74; /* #0F7A4A */
+  --green-900:  13  53  39; /* #0D3527 */
+
+  --amber-50:  251 240 224; /* #FBF0E0 */
+  --amber-300: 229 163  61; /* #E5A33D */
+  --amber-600: 154  91   0; /* #9A5B00 */
+  --amber-900:  58  42  12; /* #3A2A0C */
+
+  --red-50:  251 234 232; /* #FBEAE8 */
+  --red-300: 240 131 121; /* #F08379 */
+  --red-600: 180  48  42; /* #B4302A */
+  --red-900:  58  26  23; /* #3A1A17 */
+
+  /* -----------------------------------------------------------------------
+     Type — three families, three scales. Sizes are fixed steps; there are
+     no in-between values. Display and Body never share a line.
+     --------------------------------------------------------------------- */
+  --font-display:  var(--font-readex), ui-sans-serif, system-ui, sans-serif;
+  --font-body:     var(--font-readex), ui-sans-serif, system-ui, sans-serif;
+  --font-mono:     var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  /* Wordmark + tabular numerals. Never body copy. */
+  --font-wordmark: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --display-xs: 2rem;    /* 32px */
+  --display-sm: 2.5rem;  /* 40px */
+  --display-md: 3rem;    /* 48px */
+  --display-lg: 4rem;    /* 64px */
+  --display-xl: 5rem;    /* 80px */
+
+  --body-sm: 0.875rem;   /* 14px */
+  --body-md: 1rem;       /* 16px */
+  --body-lg: 1.125rem;   /* 18px */
+
+  --mono-sm: 0.75rem;    /* 12px */
+  --mono-md: 0.875rem;   /* 14px */
+
+  --leading-display: 1.05;
+  --leading-body: 1.6;
+  --leading-mono: 1.5;
+
+  --tracking-display: -0.022em;
+  --tracking-body: 0em;
+  --tracking-mono: 0em;
+
+  /* -----------------------------------------------------------------------
+     Space — base unit 4px. These ten steps are the whole scale.
+     Anything not on this list is off-system.
+     --------------------------------------------------------------------- */
+  --space-1:  0.25rem; /*   4px */
+  --space-2:  0.5rem;  /*   8px */
+  --space-3:  0.75rem; /*  12px */
+  --space-4:  1rem;    /*  16px */
+  --space-5:  1.5rem;  /*  24px */
+  --space-6:  2rem;    /*  32px */
+  --space-7:  3rem;    /*  48px */
+  --space-8:  4rem;    /*  64px */
+  --space-9:  6rem;    /*  96px */
+  --space-10: 8rem;    /* 128px */
+
+  /* -----------------------------------------------------------------------
+     Shape — five radii. Nothing between them.
+     --------------------------------------------------------------------- */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   20px;
+  --radius-full: 9999px;
+
+  /* -----------------------------------------------------------------------
+     Elevation — brand-tinted shadow so lifted surfaces stay in the family.
+     --------------------------------------------------------------------- */
+  --shadow-color: 2 83 77;
+  --elevation-0: none;
+  --elevation-1: 0 1px 2px rgb(var(--shadow-color) / 0.06);
+  --elevation-2: 0 2px 4px rgb(var(--shadow-color) / 0.06),
+                 0 8px 24px rgb(var(--shadow-color) / 0.06);
+  --elevation-3: 0 4px 8px rgb(var(--shadow-color) / 0.08),
+                 0 16px 48px rgb(var(--shadow-color) / 0.10);
+  --elevation-inset: inset 0 1px 2px rgb(var(--shadow-color) / 0.07);
+
+  /* -----------------------------------------------------------------------
+     Motion
+     --------------------------------------------------------------------- */
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+  --duration-slow: 400ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}

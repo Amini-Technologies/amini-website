@@ -3,8 +3,10 @@ import Link from "next/link";
 import { Wallet, ArrowLeft, Trash2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Amini",
-  description: "Learn how Amini collects, uses, and protects your personal information.",
+  title: "Privacy Policy",
+  description:
+    "How Amini collects, uses, stores and protects your personal information — and the rights you have over it.",
+  alternates: { canonical: "/privacy-policy" },
 };
 
 const sections = [
@@ -112,19 +114,19 @@ const sections = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div data-theme="dark" className="min-h-screen">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-gray-950/80 backdrop-blur border-b border-white/10">
+      <header className="glass sticky top-0 z-50 border-b border-line-1">
         <div className="container-width flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-xl gradient-bg flex items-center justify-center shadow-lg shadow-primary-500/30">
-              <Wallet className="h-5 w-5 text-white" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-1 text-accent-on">
+              <Wallet className="h-5 w-5" />
             </div>
-            <span className="text-xl font-bold text-white">Amini</span>
+            <span className="font-display text-body-lg font-bold text-ink-1">Amini</span>
           </Link>
           <Link
             href="/"
-            className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+            className="flex items-center gap-2 text-body-sm text-ink-2 transition-colors duration-base ease-standard hover:text-ink-1"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Home
@@ -133,26 +135,24 @@ export default function PrivacyPolicyPage() {
       </header>
 
       {/* Hero */}
-      <div className="relative overflow-hidden border-b border-white/10">
+      <div className="relative overflow-hidden border-b border-line-1">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-primary-500/10 blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-primary-600/5 blur-3xl" />
+          <div className="absolute left-1/4 top-0 h-[500px] w-[500px] rounded-full bg-accent-2/10 blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 h-[400px] w-[400px] rounded-full bg-accent-1/5 blur-3xl" />
         </div>
         <div className="relative container-width py-16 sm:py-20">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-sm font-medium mb-6">
-              Legal
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+            <div className="eyebrow mb-6">Legal</div>
+            <h1 className="mb-4 text-ink-1">
               Privacy Policy
             </h1>
-            <p className="text-gray-400 text-lg">
+            <p className="text-body-lg text-ink-2">
               We are committed to protecting your personal information. This policy explains how we collect, use, and safeguard your data.
             </p>
-            <p className="mt-4 text-sm text-gray-500">
-              Effective Date: <span className="text-gray-400">March 10, 2026</span>
+            <p className="mt-4 font-mono text-mono-sm text-ink-3">
+              Effective Date: <span className="text-ink-2">March 10, 2026</span>
               &nbsp;&middot;&nbsp;
-              Last Updated: <span className="text-gray-400">March 10, 2026</span>
+              Last Updated: <span className="text-ink-2">March 10, 2026</span>
             </p>
           </div>
         </div>
@@ -164,7 +164,7 @@ export default function PrivacyPolicyPage() {
           {/* Table of Contents */}
           <aside className="lg:w-64 shrink-0">
             <div className="lg:sticky lg:top-24">
-              <h2 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">
+              <h2 className="mb-4 font-mono text-mono-sm uppercase tracking-[0.12em] !leading-normal text-ink-3">
                 Contents
               </h2>
               <nav className="space-y-1">
@@ -172,14 +172,14 @@ export default function PrivacyPolicyPage() {
                   <a
                     key={section.id}
                     href={`#${section.id}`}
-                    className="block text-sm text-gray-400 hover:text-primary-400 transition-colors py-1 border-l-2 border-transparent hover:border-primary-500 pl-3"
+                    className="block border-l-2 border-transparent py-1 pl-3 text-body-sm text-ink-2 transition-colors duration-base ease-standard hover:border-accent-1 hover:text-accent-1"
                   >
                     {section.title}
                   </a>
                 ))}
                 <a
                   href="#account-deletion"
-                  className="block text-sm text-red-400 hover:text-red-300 transition-colors py-1 border-l-2 border-transparent hover:border-red-500 pl-3"
+                  className="block border-l-2 border-transparent py-1 pl-3 text-body-sm text-state-err transition-colors duration-base ease-standard hover:border-state-err"
                 >
                   Delete My Account
                 </a>
@@ -190,49 +190,49 @@ export default function PrivacyPolicyPage() {
           {/* Policy Sections */}
           <main className="flex-1 min-w-0">
             <div className="prose prose-invert prose-gray max-w-none">
-              <p className="text-gray-400 text-base leading-relaxed mb-12">
-                At <strong className="text-white">Amini Technologies Ltd</strong>, your privacy is a priority. This Privacy Policy describes how we handle your personal information when you use our mobile application, website, and related services (collectively, the &ldquo;Services&rdquo;). By using our Services, you agree to the practices described in this policy.
+              <p className="mb-12 text-body-md text-ink-2">
+                At <strong className="text-ink-1">Amini Technologies Ltd</strong>, your privacy is a priority. This Privacy Policy describes how we handle your personal information when you use our mobile application, website, and related services (collectively, the &ldquo;Services&rdquo;). By using our Services, you agree to the practices described in this policy.
               </p>
 
               {sections.map((section) => (
                 <section key={section.id} id={section.id} className="mb-12 scroll-mt-24">
-                  <h2 className="text-xl font-semibold text-white mb-4">{section.title}</h2>
+                  <h2 className="mb-4 !text-body-lg font-semibold text-ink-1">{section.title}</h2>
                   {section.content.map((paragraph, i) => (
-                    <p key={i} className="text-gray-400 leading-relaxed mb-4">
+                    <p key={i} className="mb-4 text-body-md text-ink-2">
                       {paragraph}
                     </p>
                   ))}
                   {section.list && (
                     <ul className="space-y-2 mb-4 ml-4">
                       {section.list.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-gray-400">
-                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary-500 shrink-0" />
+                        <li key={i} className="flex items-start gap-2 text-body-md text-ink-2">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-1" />
                           {item}
                         </li>
                       ))}
                     </ul>
                   )}
                   {section.footer && (
-                    <p className="text-gray-400 leading-relaxed">{section.footer}</p>
+                    <p className="text-body-md text-ink-2">{section.footer}</p>
                   )}
                 </section>
               ))}
             </div>
 
             {/* Account Deletion */}
-            <div id="account-deletion" className="mt-12 p-8 rounded-2xl bg-red-500/5 border border-red-500/20 scroll-mt-24">
+            <div id="account-deletion" className="mt-12 scroll-mt-24 rounded-xl border border-state-err/30 bg-state-err-surface p-8">
               <div className="flex items-start gap-4">
-                <div className="h-10 w-10 rounded-xl bg-red-500/10 flex items-center justify-center shrink-0">
-                  <Trash2 className="h-5 w-5 text-red-400" />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-state-err/15 text-state-err">
+                  <Trash2 className="h-5 w-5" />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-lg font-semibold text-white mb-2">Request Account & Data Deletion</h2>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                    You have the right to request the deletion of your Amini account and all associated personal data. Once submitted, we will process your request within <strong className="text-white">30 days</strong> and send a confirmation to your registered contact. Note that some data may be retained where required by law or for fraud prevention purposes.
+                  <h2 className="mb-2 !text-body-lg font-semibold text-ink-1">Request Account &amp; Data Deletion</h2>
+                  <p className="mb-6 text-body-sm text-ink-2">
+                    You have the right to request the deletion of your Amini account and all associated personal data. Once submitted, we will process your request within <strong className="text-ink-1">30 days</strong> and send a confirmation to your registered contact. Note that some data may be retained where required by law or for fraud prevention purposes.
                   </p>
                   <a
                     href="mailto:privacy@amini.ng?subject=Account%20Deletion%20Request&body=Hello%20Amini%20Team%2C%0A%0AI%20would%20like%20to%20request%20the%20deletion%20of%20my%20account%20and%20all%20associated%20personal%20data.%0A%0ARegistered%20phone%20number%3A%20%5BYour%20phone%20number%5D%0A%0AThank%20you."
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-400 hover:text-red-300 text-sm font-medium transition-all"
+                    className="inline-flex items-center gap-2 rounded-full border border-state-err/40 px-4 py-2 text-body-sm font-semibold text-state-err transition-colors duration-base ease-standard hover:bg-state-err/10"
                   >
                     <Trash2 className="h-4 w-4" />
                     Request Account Deletion
@@ -242,8 +242,8 @@ export default function PrivacyPolicyPage() {
             </div>
 
             {/* Footer note */}
-            <div className="mt-8 p-6 rounded-2xl bg-white/5 border border-white/10">
-              <p className="text-sm text-gray-400">
+            <div className="mt-8 rounded-xl bg-canvas-3 p-6">
+              <p className="text-body-sm text-ink-2">
                 This Privacy Policy is governed by the laws of the Federal Republic of Nigeria. If you have a dispute relating to this policy, please contact us first and we will do our best to resolve it.
               </p>
             </div>
@@ -252,12 +252,12 @@ export default function PrivacyPolicyPage() {
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 py-8">
+      <footer className="border-t border-line-1 py-8">
         <div className="container-width flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-500">
+          <p className="text-body-sm text-ink-3">
             &copy; {new Date().getFullYear()} Amini Technologies Ltd. All rights reserved.
           </p>
-          <Link href="/" className="text-sm text-gray-400 hover:text-primary-400 transition-colors">
+          <Link href="/" className="text-body-sm text-ink-2 transition-colors duration-base ease-standard hover:text-accent-1">
             Back to Home
           </Link>
         </div>

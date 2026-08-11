@@ -102,7 +102,7 @@ export default function HelpPage() {
         </div>
         <div className="card hover:border-primary-200 transition-all cursor-pointer group">
           <div className="flex items-center gap-4">
-            <div className="rounded-lg bg-accent-100 p-3 group-hover:bg-accent-200 transition-colors">
+            <div className="rounded-lg bg-accent-surface p-3 transition-colors group-hover:bg-accent-1/15">
               <Mail className="h-6 w-6 text-primary-600" />
             </div>
             <div>

@@ -1,147 +1,78 @@
-"use client";
-
 import {
-  Send,
-  Wallet,
-  CreditCard,
-  Smartphone,
   Fingerprint,
-  Bell,
-  ArrowLeftRight,
-  Banknote,
+  Languages,
+  PiggyBank,
+  Receipt,
+  Send,
+  Users,
 } from "lucide-react";
 
 const features = [
   {
-    name: "Instant Transfers",
+    name: "Savings plans that run themselves",
     description:
-      "Send money to other Amini users instantly and completely free. No waiting, no fees.",
+      "Pick an amount and a rhythm — daily, weekly, monthly. Amini debits your wallet and keeps the streak.",
+    icon: PiggyBank,
+  },
+  {
+    name: "Adashi, kept honest",
+    description:
+      "Run a rotating circle with people you trust. Shared ledger, scheduled turns, payouts into your wallet.",
+    icon: Users,
+  },
+  {
+    name: "Instant transfers",
+    description:
+      "Send to an Amini tag or any Nigerian bank account. Money moves in seconds, not working days.",
     icon: Send,
-    tone: "primary" as const,
   },
   {
-    name: "Digital Wallet",
+    name: "Airtime, data and bills",
     description:
-      "A secure digital wallet to store, send, and receive money anytime, anywhere.",
-    icon: Wallet,
-    tone: "primary" as const,
+      "Top up MTN, Airtel, Glo and 9mobile, and settle TV and electricity without leaving the app.",
+    icon: Receipt,
   },
   {
-    name: "Bill Payments",
+    name: "Locked behind your fingerprint",
     description:
-      "Pay for airtime, data, electricity, cable TV, and more right from your phone.",
-    icon: CreditCard,
-    tone: "accent" as const,
-  },
-  {
-    name: "Bank Transfers",
-    description:
-      "Withdraw to any Nigerian bank account or receive money via virtual accounts.",
-    icon: ArrowLeftRight,
-    tone: "primary" as const,
-  },
-  {
-    name: "Biometric Security",
-    description:
-      "Protect your account with fingerprint or face recognition for maximum security.",
+      "Biometric sign-in and a transaction PIN. Nothing leaves your wallet without you present.",
     icon: Fingerprint,
-    tone: "primary" as const,
   },
   {
-    name: "Real-time Alerts",
+    name: "Hausa and English",
     description:
-      "Get instant notifications for every transaction and account activity.",
-    icon: Bell,
-    tone: "accent" as const,
-  },
-  {
-    name: "Virtual Accounts",
-    description:
-      "Get a dedicated virtual account number to receive transfers from any bank.",
-    icon: Banknote,
-    tone: "primary" as const,
-  },
-  {
-    name: "Mobile First",
-    description:
-      "Designed for mobile from the ground up with a beautiful, intuitive interface.",
-    icon: Smartphone,
-    tone: "primary" as const,
+      "The whole app, not just the welcome screen. Switch language any time in settings.",
+    icon: Languages,
   },
 ];
 
-const toneStyles = {
-  primary: "bg-primary-50 text-primary-600",
-  accent: "bg-accent-50 text-accent-600",
-};
-
 export default function Features() {
   return (
-    <section id="features" className="section-padding relative bg-white">
+    <section id="features" className="section-padding bg-canvas-1">
       <div className="container-width">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center rounded-full border border-gray-200 px-4 py-1.5 text-sm font-medium text-gray-600 mb-6">
-            Features
-          </div>
-          <h2 className="text-balance text-gray-900">
-            Everything you need to{" "}
-            <span className="text-accent-500">manage your money</span>
-          </h2>
-          <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
-            Amini comes packed with features that make managing your finances
-            easier than ever before. Simple, secure, and always available.
+          <h2 className="text-balance text-ink-1">Everything you need in one app</h2>
+          <p className="mx-auto mt-6 max-w-2xl text-body-lg text-ink-2">
+            Saving, sending and paying usually live in three different places.
+            Amini puts them on one balance, with one PIN.
           </p>
         </div>
 
-        <div className="mx-auto mt-20 max-w-6xl">
-          <div className="grid grid-cols-1 gap-px bg-gray-200 sm:grid-cols-2 lg:grid-cols-4 rounded-3xl overflow-hidden border border-gray-200">
-            {features.map((feature) => (
-              <div
-                key={feature.name}
-                className="group relative bg-white p-8 transition-colors duration-200 hover:bg-gray-50"
-              >
-                <div
-                  className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${toneStyles[feature.tone]}`}
-                >
-                  <feature.icon className="h-6 w-6" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900">
+        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature) => (
+            <div
+              key={feature.name}
+              className="rounded-xl bg-accent-surface p-6 transition-colors duration-base ease-standard hover:bg-accent-panel"
+            >
+              <div className="flex items-start gap-3">
+                <feature.icon className="mt-0.5 h-6 w-6 shrink-0 text-ink-1" aria-hidden="true" />
+                <h3 className="text-body-lg font-semibold leading-snug text-ink-1">
                   {feature.name}
                 </h3>
-                <p className="mt-3 text-gray-600 leading-relaxed text-sm">
-                  {feature.description}
-                </p>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Stats section */}
-        <div className="mt-24 mx-auto max-w-5xl">
-          <div className="rounded-3xl border border-gray-200 p-10 sm:p-14 bg-white">
-            <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-              {[
-                { value: "10K+", label: "Active Users" },
-                { value: "₦20M+", label: "Transactions" },
-                { value: "99.9%", label: "Uptime" },
-                {
-                  value: (
-                    <>
-                      4.9<span className="text-accent-500">★</span>
-                    </>
-                  ),
-                  label: "App Rating",
-                },
-              ].map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl sm:text-4xl font-bold text-gray-900">
-                    {stat.value}
-                  </div>
-                  <div className="mt-2 text-sm text-gray-500">{stat.label}</div>
-                </div>
-              ))}
+              <p className="mt-4 text-body-sm text-ink-2">{feature.description}</p>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

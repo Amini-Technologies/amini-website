@@ -174,6 +174,443 @@ export const posts: Post[] = [
     ],
   },
   {
+    slug: "daily-savings-for-market-traders-nigeria",
+    title:
+      "Daily Savings for Market Traders: How ₦500 a Day Becomes ₦182,500 a Year",
+    description:
+      "Daily contribution — ajo, akawo, adashi — is how Nigerian traders have always saved. Here's the maths on ₦500 a day, what the collector's commission really costs you, and how to run daily savings from your phone instead.",
+    excerpt:
+      "The daily collector has been the market's savings account for generations — and takes a cut for it. Here's what daily saving actually returns, and how to keep the discipline without the commission.",
+    date: "2026-06-18",
+    readTime: "8 min read",
+    category: "Savings",
+    author: "The Amini Team",
+    keywords: [
+      "daily savings Nigeria",
+      "ajo collector",
+      "akawo savings",
+      "market trader savings Nigeria",
+      "daily contribution Nigeria",
+      "adashi daily",
+      "save money as a trader",
+    ],
+    blocks: [
+      {
+        type: "p",
+        text: "Walk through Kurmi market in Kano, Balogun in Lagos, or Ariaria in Aba at closing time and you will see the same transaction repeat a few hundred times: a trader counts out a small, fixed amount — ₦200, ₦500, ₦1,000 — and hands it to someone with a notebook. The collector writes a tick in a box. That is it. No app, no receipt, no interest. And yet daily contribution is, by volume, one of the most successful savings products in Nigeria.",
+      },
+      {
+        type: "p",
+        text: "It works for a reason that most formal savings products miss: it is sized to how traders actually earn. Money arrives in small amounts, all day, in cash. A product that asks for ₦50,000 on the last working day of the month is asking a trader to do something unnatural. A product that asks for ₦500 at close of business is asking for something they were going to do anyway.",
+      },
+      {
+        type: "p",
+        text: "This guide is about making that habit pay better: the real numbers behind daily saving, what the collector's commission costs over a year, and how to run the same system from your phone.",
+      },
+      { type: "h2", text: "The maths nobody does out loud" },
+      {
+        type: "p",
+        text: "Daily saving feels small, which is exactly why it works — and exactly why people underestimate it. Here is what a fixed daily contribution adds up to over one year:",
+      },
+      {
+        type: "ul",
+        items: [
+          "₦200 a day → ₦6,000 a month → ₦73,000 a year",
+          "₦500 a day → ₦15,000 a month → ₦182,500 a year",
+          "₦1,000 a day → ₦30,000 a month → ₦365,000 a year",
+          "₦2,000 a day → ₦60,000 a month → ₦730,000 a year",
+        ],
+      },
+      {
+        type: "p",
+        text: "Most traders who save ₦500 a day have never sat down and worked out that it is ₦182,500 by this time next year. They think of it as ₦500 — an amount too small to matter. The whole trick of daily saving is that the deposit stays psychologically small while the balance quietly stops being small.",
+      },
+      {
+        type: "p",
+        text: "One caveat worth stating plainly: naira held for a year loses purchasing power. Daily savings is not an inflation hedge and nobody should pretend it is. What it is: the difference between having ₦182,500 for stock, rent, or an emergency, and having nothing.",
+      },
+      { type: "h2", text: "What the daily collector actually costs" },
+      {
+        type: "p",
+        text: "The traditional daily collector — ajo, akawo, and other regional names — does not work for free. The standard arrangement across most Nigerian markets is that the collector keeps one day's contribution out of every cycle of about thirty. That is the commission for showing up every day and holding the money.",
+      },
+      {
+        type: "p",
+        text: "On ₦500 a day, that is ₦500 a month, or ₦6,000 a year — roughly 3.3% of everything you saved. On ₦1,000 a day it is ₦12,000 a year. It is not a scandal; it is a fee for a service, and for many traders it is worth paying, because the collector's daily visit is the thing that makes the habit stick.",
+      },
+      {
+        type: "p",
+        text: "But it is worth being clear-eyed about what you are buying. You are not buying security — the money sits with a person, not an institution. You are not buying a record — the notebook is the record, and it is in their handwriting. You are buying a reminder and a receiving hand. If you can get the reminder from somewhere else, the commission is pure cost.",
+      },
+      { type: "h2", text: "The risk everyone knows about and nobody plans for" },
+      {
+        type: "p",
+        text: "Every market in Nigeria has a story about a collector who stopped coming. Sometimes it is fraud. More often it is something duller: the collector had a family emergency and dipped into the float, intending to replace it, and then couldn't. The money is gone either way, and there is no complaints desk.",
+      },
+      {
+        type: "p",
+        text: "The structural problem is that the collector holds a pooled balance from dozens of people, in cash, with no separation between their money and yours. Nothing about the arrangement is designed to survive one bad month in that person's life.",
+      },
+      { type: "h2", text: "Running daily savings from your phone" },
+      {
+        type: "p",
+        text: "A daily savings plan in an app is the same product with the failure mode removed. You choose the amount, you choose the time, and the debit happens automatically from your wallet balance into your savings balance. There is no collector, no commission, and no notebook — the ledger is in the app and you can open it at any hour.",
+      },
+      {
+        type: "p",
+        text: "Setting one up well takes about five minutes and three decisions:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Pick an amount you can hit on a slow day, not a good day. The habit breaks the first time a debit fails. If your worst day this month cleared ₦4,000 in sales, save against that, not against your best day.",
+          "Set the debit for close of business, not morning. Save out of what the day actually produced. Morning debits compete with restocking.",
+          "Fund your wallet the same way you already handle cash — a deposit at the end of each market day, or a transfer when you bank your takings. The plan can only debit what is there.",
+        ],
+      },
+      {
+        type: "p",
+        text: "On Amini, a savings plan runs on whatever rhythm you set — daily, weekly, or monthly — and every debit shows in the app with a date and an amount. You can pause it during a bad week and restart without losing the plan. If a debit fails because the wallet was empty, you get told, rather than finding out four weeks later that the notebook has gaps.",
+      },
+      { type: "h2", text: "Should you drop the collector entirely?" },
+      {
+        type: "p",
+        text: "Not necessarily, and not immediately. Plenty of traders run both: the collector for the daily cash habit that is already working, and a phone-based plan for a second, larger target that the collector never handled — school fees, a generator, a shop expansion.",
+      },
+      {
+        type: "p",
+        text: "A reasonable path if you want to switch fully:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Run both for one cycle. Keep the collector, and start a small daily plan in the app at the same time.",
+          "Compare at the end of the month. One balance you can see any time versus one you have to ask about.",
+          "If the app version held, reduce the collector's amount and raise the app's. Switch fully when you trust it.",
+        ],
+      },
+      { type: "h2", text: "What to do with the lump sum" },
+      {
+        type: "p",
+        text: "The point of daily saving is not the balance — it is what the balance lets you do that daily cash never could. The traders who get the most out of it decide in advance:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Buying stock in bulk at a wholesale price instead of restocking in small, expensive quantities.",
+          "Paying school fees in one instalment instead of borrowing at term start.",
+          "Holding a genuine emergency buffer, so one hospital bill does not become a loan at 20% a month.",
+          "Funding a lump-sum expense — a generator, a freezer, a second stall — that raises what the business earns daily.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Deciding the purpose before the money arrives is most of the work. Undirected savings gets spent on whatever is loudest at the time.",
+      },
+      { type: "h2", text: "The bottom line" },
+      {
+        type: "p",
+        text: "Daily contribution is not a poor person's savings account — it is a well-designed product that matched Nigerian cash-flow reality decades before any fintech noticed. The only weak parts are the commission and the single human holding your money.",
+      },
+      {
+        type: "p",
+        text: "Keep the habit. Move the ledger. ₦500 a day is ₦182,500 a year either way — the question is only whether all of it is still there at the end, and whether you can see it whenever you want to.",
+      },
+    ],
+  },
+  {
+    slug: "is-this-fintech-app-safe-nigeria",
+    title:
+      "Is This Fintech App Safe? A 10-Minute Check Before You Put Money In",
+    description:
+      "Before you deposit money in any Nigerian fintech app, run these checks: CBN licence verification, NDIC cover, app store signals, and the red flags that show up in every failed platform. A practical checklist.",
+    excerpt:
+      "Nigeria has hundreds of money apps and a long history of platforms that vanished. Here is the ten-minute check that separates a licensed operator from a well-designed risk.",
+    date: "2026-07-15",
+    readTime: "7 min read",
+    category: "Security",
+    author: "The Amini Team",
+    keywords: [
+      "is fintech app safe Nigeria",
+      "CBN licensed app",
+      "check CBN licence",
+      "NDIC insured Nigeria",
+      "fintech scam Nigeria",
+      "safe savings app Nigeria",
+    ],
+    blocks: [
+      {
+        type: "p",
+        text: "Nigeria has an enormous number of apps asking to hold your money, and a long enough history of collapses — MMM, Racksterly, MBA Forex, a steady drip of smaller savings platforms — that a healthy suspicion is the correct starting position. The hard part is that a fraudulent app and a legitimate one look identical from the outside. Both have a clean interface, a referral programme, and a landing page full of confident language.",
+      },
+      {
+        type: "p",
+        text: "The good news: the checks that actually distinguish them are boring, public, and take about ten minutes. Here is the checklist.",
+      },
+      { type: "h2", text: "1. Find out who is licensed — and for what" },
+      {
+        type: "p",
+        text: "In Nigeria, the Central Bank licenses payment and deposit businesses in categories, and the category matters more than the word 'licensed' on a homepage:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Deposit Money Bank / Microfinance Bank — allowed to hold customer deposits in their own name. Deposits are covered by NDIC insurance up to the applicable limit.",
+          "Mobile Money Operator (MMO) — allowed to operate wallets and hold customer float, which must be kept in a trust account at a bank, separate from company money.",
+          "Payment Service Bank (PSB) — a limited bank, mostly telco-backed, allowed to take deposits but not lend.",
+          "Payment Solution Service Provider (PSSP) / Switching / Payment Terminal Service Provider — allowed to process payments, but not to hold your money as a deposit.",
+        ],
+      },
+      {
+        type: "p",
+        text: "An app built on a PSSP licence can legitimately move your money and still not be authorised to hold it as a deposit — in that model your balance usually sits with a partner bank or MMO. That is not automatically bad, but you should be able to find out who is actually holding the money. If a company will not tell you, that is your answer.",
+      },
+      { type: "h2", text: "2. Verify the licence yourself" },
+      {
+        type: "p",
+        text: "The Central Bank of Nigeria publishes lists of licensed institutions on cbn.gov.ng, and the NDIC publishes the list of insured institutions. Do not take a logo on a website as evidence. Two minutes of checking:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Find the legal company name — not the app name. It is usually in the terms of service, the privacy policy, or the footer. 'Something Technologies Limited' rather than the brand.",
+          "Search that legal name against the CBN's published lists of licensed banks, microfinance banks, MMOs and PSPs.",
+          "Check the company itself exists: the Corporate Affairs Commission public search will confirm an RC number and registration status.",
+          "If the app claims NDIC cover, confirm the institution holding deposits appears on the NDIC list. NDIC insures banks — it does not insure an app.",
+        ],
+      },
+      {
+        type: "p",
+        text: "An app that is genuinely licensed makes this easy, because it is a selling point. An app that is vague about its legal entity is telling you something.",
+      },
+      { type: "h2", text: "3. Red flags that have never once been wrong" },
+      {
+        type: "p",
+        text: "Every Nigerian platform that has collapsed with customer funds shared some subset of these. Any single one should slow you down; two together should stop you:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Guaranteed high returns. 'Earn 20% monthly' is not a savings product. No legitimate naira savings product can promise a return that far above treasury rates, and any that claims to is paying old depositors with new deposits.",
+          "The referral programme is the product. If you earn more by recruiting than by saving, the business model is recruitment.",
+          "No verifiable address or named leadership. Real financial companies have a registered office and executives with public professional histories.",
+          "No KYC. If you can deposit large amounts with no BVN, no ID and no verification, the platform is either not regulated or not complying — either way, it is not somewhere to keep money.",
+          "Withdrawal friction that appears later. Deposits are instant; withdrawals need 'verification', a 'processing fee', or a minimum balance. This is the classic final stage before a collapse.",
+          "Pressure and urgency. Countdown timers on a savings product are a marketing tactic borrowed from somewhere much less honest.",
+        ],
+      },
+      { type: "h2", text: "4. Read the app store reviews the right way" },
+      {
+        type: "p",
+        text: "Star ratings are close to useless — they are easy to inflate. What is useful is the shape of the recent one-star reviews. Filter to the newest, and read for one specific thing: are people unable to withdraw?",
+      },
+      {
+        type: "p",
+        text: "Complaints about slow support, ugly screens, or a failed airtime purchase are normal operational noise for any app. Clusters of 'I have been waiting eleven days for my withdrawal' are the single most reliable early warning signal that exists, and they usually appear weeks before a platform fails.",
+      },
+      { type: "h2", text: "5. Test with an amount you would not miss" },
+      {
+        type: "p",
+        text: "Before you move real savings, run one full round trip:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Deposit a small amount — a few thousand naira.",
+          "Do a normal transaction: buy airtime, send to a friend, start a small savings plan.",
+          "Withdraw the balance to your bank account. Time it.",
+          "Message support with a genuine question and see whether a human answers, and how quickly.",
+        ],
+      },
+      {
+        type: "p",
+        text: "A withdrawal that lands in minutes and support that replies the same day tell you more about an operator than any amount of marketing copy. Do this before you trust the app with a savings target, not after.",
+      },
+      { type: "h2", text: "6. Check the security basics inside the app" },
+      {
+        type: "ul",
+        items: [
+          "Is there a transaction PIN or biometric prompt separate from your login? If one unlocked phone is enough to empty a balance, that is a design failure.",
+          "Do you get a notification on every debit? Silent transactions are how small fraud goes unnoticed for months.",
+          "Can you see a full transaction history with dates, references and amounts? You need this to dispute anything.",
+          "Does the privacy policy say what happens to your data, and is there a way to delete your account?",
+        ],
+      },
+      { type: "h2", text: "If something goes wrong" },
+      {
+        type: "p",
+        text: "For a licensed provider, there is an escalation path, and it works more often than people expect:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Raise it in-app with a transaction reference and a screenshot. Most failed transactions auto-reverse within 24 hours.",
+          "If it is not resolved, put the complaint in writing by email so there is a timestamped record, and ask for a complaint reference.",
+          "After the provider's stated resolution window, escalate to the CBN Consumer Protection Department, quoting the provider's complaint reference.",
+          "For fraud involving a bank account, report to your bank immediately — the faster a receiving account is flagged, the higher the chance of a freeze.",
+        ],
+      },
+      {
+        type: "p",
+        text: "This path only exists for regulated providers. That is the practical reason licensing matters: it is not paperwork, it is your recourse.",
+      },
+      { type: "h2", text: "The bottom line" },
+      {
+        type: "p",
+        text: "Ten minutes of checking — legal name, licence category, who holds the money, recent one-star reviews, and one small round trip — filters out almost every bad actor in the Nigerian market. It costs nothing and it is the highest-return financial research you will ever do.",
+      },
+      {
+        type: "p",
+        text: "Run these checks on Amini too. Ask us who holds the funds, test a withdrawal with a small amount, and read our privacy policy before you commit savings. Any provider that flinches at those questions has told you what you needed to know.",
+      },
+    ],
+  },
+  {
+    slug: "payday-plan-nigeria-salary-earners",
+    title:
+      "The 48-Hour Payday Plan: What to Do With Your Salary Before It Disappears",
+    description:
+      "Salary lands, and three weeks later you cannot account for it. This is a practical order of operations for the first 48 hours after payday in Nigeria — obligations, automated savings, prepaid essentials, and sinking funds.",
+    excerpt:
+      "Most salaries in Nigeria are not overspent — they are unallocated. Here is a concrete order of operations for the first 48 hours after payday, with a worked example.",
+    date: "2026-08-05",
+    readTime: "8 min read",
+    category: "Personal Finance",
+    author: "The Amini Team",
+    keywords: [
+      "how to manage salary Nigeria",
+      "payday plan Nigeria",
+      "budgeting Nigeria",
+      "salary savings Nigeria",
+      "sinking fund Nigeria",
+      "personal finance Nigeria",
+    ],
+    blocks: [
+      {
+        type: "p",
+        text: "There is a specific feeling, common to salaried Nigerians, of checking your balance on the 18th and not being able to reconstruct where the money went. Not one big regrettable purchase — just a long tail of transfers, top-ups, transport, and family requests that individually made sense.",
+      },
+      {
+        type: "p",
+        text: "That is rarely an overspending problem. It is an allocation problem. Money that has not been given a job gets one assigned by whoever asks first. The fix is to allocate everything in the first 48 hours after salary lands, while the balance is still large enough for decisions to be easy.",
+      },
+      { type: "h2", text: "Why 48 hours" },
+      {
+        type: "p",
+        text: "Two reasons, one behavioural and one practical. Behaviourally, your willingness to commit money to a savings plan is highest in the hours right after payday and drops steeply for the rest of the month. Practically, the requests start on day three. Anything you have not already moved is, in effect, available.",
+      },
+      {
+        type: "p",
+        text: "The goal of the plan below is that by the end of day two, the only money still sitting in your spending account is money you are genuinely free to spend.",
+      },
+      { type: "h2", text: "Step 1 — Pay the fixed obligations first" },
+      {
+        type: "p",
+        text: "Anything with a due date and a penalty goes first: loan repayments, cooperative deductions, school fee instalments, subscriptions you actually use. Pay them, or at minimum move the exact amounts into a separate balance so they are not spendable.",
+      },
+      {
+        type: "p",
+        text: "This is unglamorous and it is also the step that prevents the most expensive mistakes. A missed loan repayment in Nigeria compounds fast, and late school fees have a habit of turning into borrowing at rates that undo a year of saving.",
+      },
+      { type: "h2", text: "Step 2 — Automate savings the same day, not at month end" },
+      {
+        type: "p",
+        text: "The single highest-impact change most salary earners can make is moving savings from the end of the month to the beginning. Saving what is left over sounds prudent and produces nothing, because nothing is left over. Saving first and living on the remainder produces a balance every single month.",
+      },
+      {
+        type: "p",
+        text: "Two ways to do it, and the second is better:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Manual transfer on payday. Works, but relies on you doing it twelve times a year without slipping.",
+          "An automated plan that debits on or just after your pay date. Set once, runs without you. On Amini, a monthly savings plan can be pointed at your pay date so the debit happens while the balance is full.",
+        ],
+      },
+      {
+        type: "p",
+        text: "On the amount: the usual advice is 20%. In an economy where food inflation regularly outruns salary increases, that is unrealistic for a lot of households, and an unrealistic target abandoned in month two is worse than a modest one kept for two years. Start at a number you are confident of hitting every month — even 5% — and raise it with each salary increase rather than out of your current expenses.",
+      },
+      { type: "h2", text: "Step 3 — Buy the prepaid essentials up front" },
+      {
+        type: "p",
+        text: "This step is specific to how Nigeria actually works, and it is the one most budgets miss. Several of your monthly costs are prepaid, which means they can be bought at full balance rather than paid out of whatever remains in week four:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Electricity. Buy the month's token in one purchase. Larger token purchases avoid repeated small top-ups, and you stop losing evenings to an empty meter.",
+          "Data and airtime. Buy the monthly bundle on payday. Mid-month data panic buying is consistently more expensive per gigabyte.",
+          "Transport. If you fuel a car or hold a transport card, front-load a fixed amount and treat it as the month's budget.",
+          "Cable or streaming, if you keep them. One payment, done.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The effect is that the essentials are secured while money is plentiful rather than being funded out of the thinnest part of the month.",
+      },
+      { type: "h2", text: "Step 4 — Fund the sinking funds" },
+      {
+        type: "p",
+        text: "A sinking fund is a savings target for a known, irregular expense. Nigerians carry a lot of these, and they are the usual reason an otherwise stable month suddenly needs a loan:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Rent, which in most of the country is demanded annually, in full.",
+          "School fees, three times a year.",
+          "Sallah, Christmas, and the travel that comes with both.",
+          "Family obligations — weddings, funerals, contributions — which are not optional and are entirely predictable in aggregate.",
+          "Car servicing, or a phone that is visibly near the end of its life.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Divide each annual cost by twelve and save that amount monthly into a separate target. Rent of ₦1.2m is ₦100,000 a month — a demanding number, but a known one, which is infinitely better than discovering it in the week it is due. A savings plan per goal keeps the balances from blurring into one pot you then raid.",
+      },
+      { type: "h2", text: "Step 5 — Leave a cash buffer, then stop optimising" },
+      {
+        type: "p",
+        text: "Keep one buffer — a month of essential spending is the standard target, though most people build it over a year rather than at once — and leave the rest of the balance alone as genuinely spendable money. A plan with no slack in it fails on the first unexpected hospital visit, and the failure usually takes the savings plan down with it.",
+      },
+      { type: "h2", text: "A worked example on ₦250,000" },
+      {
+        type: "p",
+        text: "Numbers are illustrative — the proportions matter more than the figures:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Fixed obligations: ₦40,000 (loan repayment and a cooperative deduction). Paid on day one.",
+          "Automated savings: ₦25,000 (10%). Debits automatically on the pay date.",
+          "Prepaid essentials: ₦35,000 (electricity token, data bundle, transport float).",
+          "Sinking funds: ₦45,000 (₦30,000 rent, ₦10,000 school fees, ₦5,000 Sallah and family events).",
+          "Buffer top-up: ₦10,000 until one month of essentials is covered, then it stops.",
+          "Remaining: ₦95,000 for food, everyday costs, and anything you want. Spendable, guilt-free.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The important line is the last one. The point of allocating aggressively in the first 48 hours is not austerity — it is that the remainder is genuinely yours to spend, because everything else is already handled.",
+      },
+      { type: "h2", text: "When salary is late" },
+      {
+        type: "p",
+        text: "Delayed salaries are a real feature of Nigerian working life, and a plan that assumes punctual payment breaks. Two adaptations: keep the automated savings debit a few days after your usual pay date rather than on it, so a short delay does not cause a failed debit; and treat the buffer as the thing that absorbs late payment, which is precisely what it is for. If a debit does fail, restart the plan rather than abandoning it — one missed month is a gap, not a reason to stop.",
+      },
+      { type: "h2", text: "The bottom line" },
+      {
+        type: "p",
+        text: "Most Nigerian salaries are not lost to extravagance. They are lost to a month with no structure, in which every naira is available to everyone who asks. Allocating the whole salary within 48 hours — obligations, automated savings, prepaid essentials, sinking funds, buffer, then the free remainder — changes the outcome without changing your income.",
+      },
+      {
+        type: "p",
+        text: "If you want the automated part to be genuinely automatic, set a plan in Amini pointed at your pay date and let it run. The month gets much easier when the important decisions were all made on day one.",
+      },
+    ],
+  },
+  {
     slug: "how-to-save-money-in-nigeria",
     title:
       "How to Save Money in Nigeria: A Practical Guide to Auto, Target, Locked, and Group Savings",

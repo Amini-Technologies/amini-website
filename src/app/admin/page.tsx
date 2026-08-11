@@ -1,5 +1,6 @@
 "use client";
 
+import type React from "react";
 import { useState } from "react";
 import {
   Users,
@@ -30,7 +31,7 @@ import {
   Bar,
 } from "recharts";
 
-const statusIcons: Record<string, JSX.Element> = {
+const statusIcons: Record<string, React.JSX.Element> = {
   completed: <CheckCircle className="h-4 w-4 text-green-500" />,
   COMPLETED: <CheckCircle className="h-4 w-4 text-green-500" />,
   pending: <Clock className="h-4 w-4 text-amber-500" />,
@@ -57,8 +58,8 @@ const typeColors: Record<string, string> = {
   TRANSFER: "bg-blue-100 text-blue-700",
   deposit: "bg-green-100 text-green-700",
   DEPOSIT: "bg-green-100 text-green-700",
-  withdrawal: "bg-accent-100 text-primary-700",
-  WITHDRAWAL: "bg-accent-100 text-primary-700",
+  withdrawal: "bg-accent-surface text-accent-1",
+  WITHDRAWAL: "bg-accent-surface text-accent-1",
   bill_payment: "bg-amber-100 text-amber-700",
   BILL_PAYMENT: "bg-amber-100 text-amber-700",
 };
@@ -121,7 +122,7 @@ export default function AdminDashboard() {
       change: `${dashboardData?.transactions?.pending || 0} pending`,
       trend: "up",
       icon: ArrowLeftRight,
-      color: "bg-accent-500",
+      color: "bg-accent-2",
     },
     {
       name: "Today's Volume",
@@ -450,7 +451,7 @@ export default function AdminDashboard() {
           className="card hover:border-primary-200 transition-all hover:-translate-y-1 group cursor-pointer"
         >
           <div className="flex items-center gap-4">
-            <div className="rounded-lg bg-accent-100 p-3 group-hover:bg-accent-200 transition-colors">
+            <div className="rounded-lg bg-accent-surface p-3 transition-colors group-hover:bg-accent-1/15">
               <ArrowLeftRight className="h-6 w-6 text-primary-600" />
             </div>
             <div>

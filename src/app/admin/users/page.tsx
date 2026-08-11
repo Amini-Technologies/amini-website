@@ -1,5 +1,6 @@
 "use client";
 
+import type React from "react";
 import { useState, useCallback } from "react";
 import {
   Search,
@@ -33,7 +34,7 @@ const statusColors: Record<string, string> = {
   pending: "bg-amber-100 text-amber-700",
 };
 
-const statusIcons: Record<string, JSX.Element> = {
+const statusIcons: Record<string, React.JSX.Element> = {
   ACTIVE: <CheckCircle className="h-4 w-4" />,
   active: <CheckCircle className="h-4 w-4" />,
   SUSPENDED: <XCircle className="h-4 w-4" />,

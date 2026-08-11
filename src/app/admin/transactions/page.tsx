@@ -1,5 +1,6 @@
 "use client";
 
+import type React from "react";
 import { useState, useCallback } from "react";
 import {
   Search,
@@ -36,7 +37,7 @@ const statusColors: Record<string, string> = {
   REVERSED: "bg-gray-100 text-gray-700",
 };
 
-const statusIcons: Record<string, JSX.Element> = {
+const statusIcons: Record<string, React.JSX.Element> = {
   completed: <CheckCircle className="h-4 w-4" />,
   COMPLETED: <CheckCircle className="h-4 w-4" />,
   pending: <Clock className="h-4 w-4" />,
@@ -47,7 +48,7 @@ const statusIcons: Record<string, JSX.Element> = {
   REVERSED: <AlertTriangle className="h-4 w-4" />,
 };
 
-const typeIcons: Record<string, JSX.Element> = {
+const typeIcons: Record<string, React.JSX.Element> = {
   transfer: <ArrowUpRight className="h-4 w-4" />,
   TRANSFER: <ArrowUpRight className="h-4 w-4" />,
   deposit: <ArrowDownLeft className="h-4 w-4" />,
@@ -63,8 +64,8 @@ const typeColors: Record<string, string> = {
   TRANSFER: "bg-blue-100 text-blue-700",
   deposit: "bg-green-100 text-green-700",
   DEPOSIT: "bg-green-100 text-green-700",
-  withdrawal: "bg-accent-100 text-primary-700",
-  WITHDRAWAL: "bg-accent-100 text-primary-700",
+  withdrawal: "bg-accent-surface text-accent-1",
+  WITHDRAWAL: "bg-accent-surface text-accent-1",
   bill_payment: "bg-amber-100 text-amber-700",
   BILL_PAYMENT: "bg-amber-100 text-amber-700",
 };

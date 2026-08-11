@@ -1,98 +1,49 @@
-"use client";
-
-import { Download, UserPlus, Wallet, Send, ArrowRight } from "lucide-react";
+import { DarkPhone } from "./DeviceArt";
 
 const steps = [
   {
-    number: "01",
-    title: "Download the App",
-    description: "Get Amini from the App Store or Google Play Store for free. Available on all devices.",
-    icon: Download,
+    title: "Download the app",
+    description: "Free on iOS and Android. Nothing to pay to open an account.",
   },
   {
-    number: "02",
-    title: "Create Your Account",
-    description: "Sign up with your phone number and verify your identity in just a few minutes.",
-    icon: UserPlus,
+    title: "Create your account",
+    description: "Your phone number, a PIN, and a quick identity check. Under five minutes.",
   },
   {
-    number: "03",
-    title: "Fund Your Wallet",
-    description: "Add money via bank transfer to your dedicated virtual account instantly.",
-    icon: Wallet,
-  },
-  {
-    number: "04",
-    title: "Start Transacting",
-    description: "Send money instantly to anyone, pay bills, and manage your finances with ease.",
-    icon: Send,
+    title: "Fund it and start saving",
+    description:
+      "Transfer to your dedicated account number, then set a plan, join a circle, or send money.",
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="section-padding relative bg-gray-50">
+    <section id="how-it-works" className="section-padding bg-canvas-tint">
       <div className="container-width">
-        <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center rounded-full border border-gray-200 bg-white px-4 py-1.5 text-sm font-medium text-gray-600 mb-6">
-            How It Works
+        <div className="overflow-hidden rounded-xl bg-canvas-1">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
+            <div className="p-8 sm:p-12">
+              <h2 className="text-ink-1">How it works</h2>
+
+              <ol className="mt-10 space-y-8">
+                {steps.map((step, i) => (
+                  <li key={step.title} className="flex gap-5">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent-panel font-wordmark text-body-lg font-bold tabular text-ink-1">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-body-lg font-semibold text-ink-1">{step.title}</h3>
+                      <p className="mt-2 text-body-md text-ink-2">{step.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <div className="relative flex justify-center overflow-hidden px-8 lg:justify-end lg:px-0">
+              <DarkPhone className="mb-[-64px] mt-4 lg:mr-12" />
+            </div>
           </div>
-          <h2 className="text-balance text-gray-900">
-            Get started in{" "}
-            <span className="text-accent-500">4 simple steps</span>
-          </h2>
-          <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
-            Setting up your Amini account takes less than 5 minutes.
-            Start managing your money smarter today.
-          </p>
-        </div>
-
-        <div className="mx-auto mt-20 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {steps.map((step, index) => (
-              <div key={step.number} className="relative group">
-                {/* Connection line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-14 left-[calc(50%+2rem)] right-[-1.5rem] h-px bg-gray-200" />
-                )}
-
-                <div className="relative bg-white rounded-2xl p-7 border border-gray-200 transition-colors duration-200 hover:border-gray-300">
-                  <div className="text-xs font-semibold text-gray-400 tracking-wider">
-                    STEP {step.number}
-                  </div>
-
-                  <div className="mt-3 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary-600">
-                    <step.icon className="h-6 w-6" />
-                  </div>
-
-                  <h3 className="mt-5 text-lg font-semibold text-gray-900">
-                    {step.title}
-                  </h3>
-                  <p className="mt-3 text-gray-600 leading-relaxed text-sm">
-                    {step.description}
-                  </p>
-                </div>
-
-                {/* Arrow for mobile */}
-                {index < steps.length - 1 && (
-                  <div className="flex justify-center py-3 lg:hidden">
-                    <ArrowRight className="h-5 w-5 text-gray-300 rotate-90" />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="mt-20 text-center">
-          <a href="#download" className="btn-primary group">
-            Get Started Now
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </a>
-          <p className="mt-4 text-sm text-gray-500">
-            No credit card required. Free to download and use.
-          </p>
         </div>
       </div>
     </section>

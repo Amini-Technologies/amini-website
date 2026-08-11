@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { posts } from "@/lib/blog";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://amini.ng";
+import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const newestPost = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1))[0];
+
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${SITE_URL}/`,
@@ -13,7 +14,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE_URL}/blog`,
-      lastModified: new Date(),
+      /* Tracks the newest post rather than the build clock, so a rebuild with
+         no new writing does not claim the page changed. */
+      lastModified: new Date(newestPost.date),
       changeFrequency: "weekly",
       priority: 0.8,
     },

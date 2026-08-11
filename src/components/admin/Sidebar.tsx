@@ -152,7 +152,7 @@ export default function AdminSidebar() {
 
           {/* Footer */}
           <div className="border-t border-gray-200 p-4">
-            <div className="rounded-lg bg-gradient-to-br from-primary-50 to-accent-50 p-4">
+            <div className="rounded-lg bg-gradient-to-br from-accent-surface to-canvas-2 p-4">
               <p className="text-sm font-medium text-gray-900">Need help?</p>
               <p className="mt-1 text-xs text-gray-600">
                 Check our documentation or contact support.

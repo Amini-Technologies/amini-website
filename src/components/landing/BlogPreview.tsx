@@ -8,56 +8,47 @@ export default function BlogPreview() {
     .slice(0, 3);
 
   return (
-    <section id="blog" className="section-padding bg-white border-t border-gray-200">
+    <section id="blog" className="section-padding bg-canvas-tint">
       <div className="container-width">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center rounded-full border border-gray-200 px-4 py-1.5 text-sm font-medium text-gray-600 mb-6">
-              From the blog
-            </div>
-            <h2 className="text-balance text-gray-900">
-              Money guides for{" "}
-              <span className="text-accent-500">modern Nigerians</span>
-            </h2>
-            <p className="mt-4 text-lg text-gray-600">
-              Practical writing on transfers, bills, savings, and the small
-              everyday things that quietly drain your wallet.
+            <h2 className="text-balance text-ink-1">Money guides for modern Nigerians</h2>
+            <p className="mt-5 text-body-lg text-ink-2">
+              Practical writing on saving, Adashi, transfers, and the small
+              everyday things that quietly drain a wallet.
             </p>
           </div>
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary-700 hover:text-primary-800 transition-colors"
+            className="inline-flex items-center gap-2 text-body-sm font-medium text-accent-2 transition-colors duration-base ease-standard hover:text-accent-1"
           >
             All articles
-            <ArrowRight className="h-4 w-4" />
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
           {latest.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group flex flex-col rounded-2xl border border-gray-200 bg-white p-6 transition-colors hover:border-gray-300"
+              className="group flex flex-col rounded-xl bg-canvas-1 p-6 transition-colors duration-base ease-standard hover:bg-accent-surface"
             >
-              <div className="flex items-center gap-2 text-xs text-gray-500">
-                <span className="inline-flex items-center rounded-full bg-gray-50 px-2.5 py-1 font-medium text-gray-700">
+              <div className="flex items-center gap-3 text-body-sm text-ink-3">
+                <span className="rounded-md bg-accent-surface px-3 py-1 text-ink-2 transition-colors duration-base ease-standard group-hover:bg-accent-panel">
                   {post.category}
                 </span>
-                <span>·</span>
                 <span>{post.readTime}</span>
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-gray-900 leading-snug group-hover:text-primary-700 transition-colors">
+              <h3 className="mt-5 text-body-lg font-semibold leading-snug text-ink-1">
                 {post.title}
               </h3>
-              <p className="mt-3 text-sm text-gray-600 leading-relaxed flex-1">
-                {post.excerpt}
-              </p>
-              <div className="mt-5 flex items-center justify-between text-xs text-gray-500">
+              <p className="mt-3 flex-1 text-body-sm text-ink-2">{post.excerpt}</p>
+              <div className="mt-5 flex items-center justify-between text-body-sm text-ink-3">
                 <span>{formatDate(post.date)}</span>
-                <span className="inline-flex items-center gap-1 font-semibold text-primary-700">
+                <span className="inline-flex items-center gap-1 font-medium text-accent-2">
                   Read
-                  <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-3 w-3 transition-transform duration-base ease-standard group-hover:translate-x-1" />
                 </span>
               </div>
             </Link>
